@@ -1,0 +1,892 @@
+C# Questions & Answers – IF Statements
+This section of our 1000+ C# multiple choice questions focuses on relational and logical operators in C# Programming Language.
+
+1. What will be the output of the following C# code?
+
+     static void Main(string[] args)
+
+     {
+
+         int i = 30;
+
+         int j = 25 % 25;
+
+         if (Convert.ToBoolean(Convert.ToInt32(i = j)))
+
+         {
+
+             Console.WriteLine("In if");
+
+         }
+
+         else
+
+         {
+
+             Console.WriteLine("In else");
+
+         }
+
+         Console.WriteLine("In main");
+
+         Console.ReadLine();
+
+     }
+
+a) In if
+b) In else
+c)
+
+In if
+In main
+
+d)
+
+In else
+In main
+
+View Answer
+Answer: d
+Explanation: Usage of ‘=’ operator instead of ‘==’ operator. Hence, the condition is not true.
+Output:
+
+         In else
+         In main
+
+2. What will be the output of the following C# code?
+
+     static void Main(string[] args)
+
+     {
+
+         int i;
+
+         int b = 8, a = 32;
+
+         for (i = 0; i <= 10; i++)
+
+         {
+
+             if ((a / b * 2)== 2)
+
+             {
+
+                 Console.WriteLine( i + " ");
+
+                 continue;
+
+             }
+
+             else if (i != 4)
+
+                 Console.Write(i + " ");
+
+             else
+
+                 break;
+
+        }
+
+        Console.ReadLine();
+
+     }
+
+a) 1 2 3 4 5 6 7 8 9
+b) 0 1 2 3 4 5 6 7 8
+c) 0 1 2 3
+d) 0 1 2 3 4
+View Answer
+Answer: c
+Explanation: The if condition will never be fulfilled as ((a / b) * 2 == 2) is never true. Hence, only else part of condition will be executed until i! = 4 i.e i = 0, 1, 2, 3.
+Output:
+
+0 1 2 3
+
+3. Which of the following conditions are true in the following C# code?
+
+     static void Main(string[] args)
+
+     {
+
+         Console.WriteLine("Enter a letter:");
+
+         char c = (char)Console.Read();
+
+         if (Char.IsDigit(c) == true)
+
+             Console.WriteLine("A number");
+
+         else if (char.IsLower(c) == true)
+
+             Console.WriteLine("A lowercase letter");
+
+         else if (char.IsUpper(c) == true)
+
+             Console.WriteLine("An uppercase letter");
+
+         Console.ReadLine();
+
+     }
+
+     a. Enter a letter :
+
+        a
+
+        An uppercase letter
+
+     b. Enter a letter :
+
+        A
+
+        An uppercase letter
+
+     c. Enter a letter :
+
+        2
+
+        A number
+
+     d. Enter a letter :
+
+        2
+
+        A lowercase letter.
+
+a) a, b, c
+b) b, c, d
+c) a, d, b
+d) b, c
+View Answer
+Answer: d
+Explanation: None.
+Output:
+
+                    Enter a letter :
+                          A
+                          An uppercase letter
+                          Enter a letter :
+                          2
+                          A number
+
+4. What will be the output of the following C# code?
+
+      static void Main(string[] args)
+
+      {
+
+          int i, j;
+
+          for (i = 2; i >= 0; i--)
+
+          {
+
+              for (j = 0; j <= 2; j++)
+
+              {
+
+                  if (i == j)
+
+                  {
+
+                      Console.WriteLine("1");
+
+                  }
+
+                  else
+
+                  {
+
+                      Console.WriteLine("0");
+
+                  }
+
+             }
+
+             Console.WriteLine("\n");
+
+             Console.ReadLine();
+
+          }
+
+      }
+
+a)
+
+   1 0 0
+   0 1 0
+   0 0 1
+
+b)
+
+   0 1 0
+   1 0 0
+   0 0 1
+
+c)
+
+   0 0 1
+   0 1 0
+   1 0 0
+
+d)
+
+   1 0 0
+   0 0 1
+   0 1 0
+
+View Answer
+Answer: c
+Explanation: In first row for i = 2 : j = 0 == 0 as if condition fails for (i == j)
+i = 2 : j = 1 == 0 as again if condition fails for ( i == j)
+i = 2 : j = 2 == 1 as (i == j).
+In Second row for i = 1 : j = 0 == 0 as if condition fails for (i == j)
+i = 1 : j = 1 == 1 (as i==j)
+i = 1 : j = 2 == 0 as (i==j) not true
+In Third row for i = 0 : j = 0 == 1 as (i==j) true
+i = 0 : j = 1 == 0 as (i==j) not true.
+i = 0 : j = 2 == 0 .
+So, 0 0 1
+0 1 0
+1 0 0
+
+Output: 0 0 1
+0 1 0
+1 0 0
+
+5. Select the correct ‘if statement’ to be filled in the following C# code?
+
+     static void Main(string[] args)
+
+     {
+
+         int []num = {50, 65, 56, 88, 43, 52};
+
+         int even = 0, odd = 0;
+
+         for (int i = 0 ;i < num.Length ;i++)
+
+         {
+
+              /*___________________________*/
+
+         }   
+
+         Console.WriteLine("Even Numbers:" +even);
+
+         Console.WriteLine("Odd Numbers:" +odd);
+
+         Console.ReadLine();
+
+     }
+
+a)
+
+       if ((num % 2) == 0)
+
+       {
+
+           even += 1;
+
+       }
+
+       else
+
+       {
+
+           odd += 1;
+
+       }
+
+b)
+
+       if((num * i) == 0)
+
+       {
+
+           even += 1;
+
+       }
+
+       else
+
+       {
+
+           odd += 1;
+
+       }
+
+c)
+
+       if(num[i] % 2 == 0)
+
+        {
+
+            even += 1;
+
+        }
+
+        else
+
+        {
+
+            odd += 1;
+
+        }
+
+d)
+
+       if(num[i] % 2 = 0)
+
+        {
+
+            even += 1;
+
+        }
+
+        else
+
+        {
+
+            odd += 1;
+
+        }
+
+View Answer
+Answer: c
+Explanation:
+
+                int []num = {50, 65, 56, 88, 43, 52};
+                int even = 0,odd = 0;
+                for (int i = 0 ;i &lt; num.Length ;i++)
+                {
+                    if (num[i] % 2 == 0)
+                    {
+                    even += 1;
+                    }
+                    else
+                    {
+                    odd += 1;
+                    }
+                }   
+                Console.WriteLine("Even Numbers: " +even);
+                Console.WriteLine("Odd Numbers: " +odd);
+                Console.ReadLine();
+
+ 
+ 
+
+6. What will be the output of the following C# code?
+
+     static void Main(string[] args)
+
+     {
+
+         int a = 15, b = 10, c = 1;
+
+         if (Convert.ToBoolean(a) && (b > c))
+
+         {
+
+             Console.WriteLine("cquestionbank");
+
+         }
+
+         else
+
+         {
+
+             break;
+
+         }
+
+     }
+
+a) cquestionbank
+b) It will print nothing
+c) Compile time error
+d) Run time error
+View Answer
+Answer: c
+Explanation: Keyword “break” is not part of if-else statement. This keyword is used in case of loop or switch case statement.
+
+7. What will be the output of the following C# code?
+
+      static void Main(string[] args)
+
+      {  
+
+          int a = 5;
+
+          if (Convert.ToBoolean((.002f) -(0.1f)))
+
+          Console.WriteLine("Sachin Tendulkar");
+
+          else if (a == 5)
+
+          Console.WriteLine("Rahul Dravid");
+
+          else
+
+          Console.WriteLine("Ms Dhoni");
+
+          Console.ReadLine();
+
+      }
+
+a) Rahul Dravid
+b) Sachin Tendulkar
+c) Ms Dhoni
+d) Warning : Unreachable Code
+View Answer
+Answer: b
+Explanation: (0.002 – 0.1f) not equivalent to zero hence it is true. So, only first if clause will execute and print:Sachin Tendulkar on console. As, first condition is always true so no else if statement will be executed.
+Output:
+
+ Sachin Tendulkar
+
+8. What will be the output of the following C# code?
+
+      static void Main(string[] args)
+
+      {   
+
+          int a = -1;
+
+          int b = -1;
+
+          if (Convert.ToBoolean (++a = ++b))
+
+          Console.WriteLine("a");
+
+          else
+
+          Console.WriteLine("b");
+
+          Console.ReadLine();
+
+      }
+
+a) a
+b) b
+c) Compile time error
+d) Code execute successfully with no output
+View Answer
+Answer: c
+Explanation: Both a and b are constants. Illegal to assign a value to constant on left hand of ‘=’operator. Hence, it must be some variable.
+
+9. What will be the output of the following C# code?
+
+      static void Main(string[] args)
+
+      {
+
+          int a = 5, b = 10;
+
+          if (Convert.ToBoolean(Convert.ToInt32(0xB)))
+
+          if (Convert.ToBoolean(Convert.ToInt32(022)))
+
+          if (Convert.ToBoolean(Convert.ToInt32('\xeb')))
+
+          Console.WriteLine("java");
+
+          else ;
+
+          else ;
+
+          else ;
+
+      }
+
+a) Compile time error: Misplaced else
+b) Compile time error: Undefined symbol
+c) java
+d) Warning: Condition is always true
+View Answer
+Answer: c
+Explanation:
+
+                  oxB: hexadecimal integer constant.
+                  022: It octal integer constant.
+                 ‘\xeb’: It is hexadecimal character constant.
+
+As zero is false and any non-zero number is true. All, constants return a non-zero value. So, all if conditions in the above program are true.
+Output:
+
+ java.
+
+10. What will be the output of the following C# code?
+
+     static void Main(string[] args)
+
+     {
+
+         int a = 5, b = 10;
+
+         if (Convert.ToBoolean(Convert.ToInt32(++a)) || Convert.ToBoolean(Convert.ToInt32(++b)))
+
+         {
+
+             Console.WriteLine(a + "\n" + b);
+
+         }
+
+         else
+
+         Console.WriteLine(" C# ");
+
+     }
+
+a) 6 11
+b) 6 16
+c) 6 12
+d) 6 10
+View Answer
+Answer: d
+Explanation: Consider the following expression:( ++a || ++b). In this expression || is ‘Logical OR operator’. Two important properties of this operator are:
+Property 1:
+(Expression1) || (Expression2)
+|| operator returns 0 if and only if both expressions return a zero otherwise || operator returns 1.
+initial value of a is 5. So ++a will be 6. Since ++a is returning a non-zero so ++b will not execute.
+Output :
+
+ 6 10.
+
+
+
+
+This section of our 1000+ C# multiple choice questions focuses on polymorphism in C# Programming Language.
+
+1. The capability of an object in Csharp to take number of different forms and hence display behaviour as according is known as ___________
+a) Encapsulation
+b) Polymorphism
+c) Abstraction
+d) None of the mentioned
+View Answer
+Answer: b
+Explanation: None.
+
+2. What will be the output of the following C# code?
+
+     public class sample
+
+     {
+
+         public static int x = 100;
+
+         public static int y = 150;
+
+     
+
+     }
+
+     public class newspaper :sample
+
+     {
+
+         new public static int x = 1000;
+
+         static void Main(string[] args)
+
+         {
+
+             console.writeline(sample.x + "  " + sample.y + "  " + x);
+
+         }
+
+     }
+
+a) 100 150 1000
+b) 1000 150 1000
+c) 100 150 1000
+d) 100 150 100
+View Answer
+Answer: c
+Explanation: sample.x = 100
+sample.y = 150
+variable within scope of main() is x = 1000
+Output :
+
+ 100  150  1000
+
+3. Which of the following keyword is used to change data and behavior of a base class by replacing a member of the base class with a new derived member?
+a) Overloads
+b) Overrides
+c) new
+d) base
+View Answer
+Answer: c
+Explanation: None.
+
+4. Correct way to overload +operator?
+a) public sample operator + (sample a, sample b)
+b) public abstract operator + (sample a,sample b)
+c) public static sample operator + (sample a, sample b)
+d) all of the mentioned
+View Answer
+Answer: d
+Explanation: None.
+
+5. What will be the Correct statement of the following C# code?
+
+     public class maths
+
+     {
+
+         public int x;
+
+         public virtual void a()
+
+         {
+
+     
+
+         }
+
+     
+
+     }
+
+     public class subject : maths
+
+     {
+
+         new public void a()
+
+         {
+
+     
+
+         }
+
+     
+
+     }
+
+a) The subject class version of a() method gets called using sample class reference which holds subject class object
+b) subject class hides a() method of base class
+c) The code replaces the subject class version of a() with its math class version
+d) None of the mentioned
+View Answer
+Answer: d
+Explanation: None.
+
+6. Select the sequence of execution of function f1(), f2() & f3() in C# .NET CODE?
+
+     class base
+
+     {
+
+         public void f1() {}
+
+         public virtual void f2() {}
+
+         public virtual  void f3() {}
+
+     }
+
+     class derived :base
+
+     {
+
+         new public void f1() {}
+
+         public override void f2() {}
+
+         public new void f3() {}
+
+     } 
+
+     class Program
+
+     {
+
+         static void Main(string[] args)
+
+         {
+
+             baseclass b = new derived();
+
+             b.f1 ();
+
+             b.f2 ();
+
+             b.f3 ();
+
+         }
+
+     }
+
+a)
+
+   f1() of derived class get executed
+   f2() of derived class get executed
+   f3() of base class get executed
+
+b)
+
+   f1() of base class get executed
+   f2() of derived class get executed
+   f3() of base class get executed
+
+c)
+
+   f1() of base class get executed
+   f2() of derived class get executed
+   f3() of derived class get executed
+
+d)
+
+   f1() of derived class get executed
+   f2() of base class get executed
+   f3() of base class get executed
+
+View Answer
+Answer: b
+Explanation: None.
+ 
+ 
+
+7. Which of the following statements is correct?
+a) Each derived class does not have its own version of a virtual method
+b) If a derived class does not have its own version of virtual method then one in base class is used
+c) By default methods are virtual
+d) All of the mentioned
+View Answer
+
+8. Correct code to be added for overloaded operator – for the following C# code?
+
+     class csharp
+
+     {
+
+         int x, y, z;
+
+         public csharp()
+
+         {
+
+     
+
+         }
+
+         public csharp(int a ,int b ,int c)
+
+         {
+
+             x = a;
+
+             y = b;
+
+             z = c;
+
+         }
+
+         Add correct set of code here
+
+        public void display()
+
+        {
+
+            console.writeline(x + "  " + y + "  " + z);
+
+        }
+
+        class program
+
+        {
+
+            static void Main(String[] args)
+
+            {
+
+                csharp s1 = new csharp(5 ,6 ,8);
+
+                csharp s3 = new csharp();
+
+                s3 = - s1;
+
+                s3.display();
+
+            }
+
+        }
+
+    }
+
+a)
+
+        public static csharp operator -(csharp s1)
+
+        {
+
+            csharp t = new csharp();
+
+            t.x = s1.x;
+
+            t.y = s1.y;
+
+            t.z = -s1.z;
+
+            return t;
+
+        }
+
+b)
+
+        public static csharp operator -(csharp s1)
+
+        {
+
+            csharp t = new csharp();
+
+            t.x = s1.x;
+
+            t.y = s1.y;
+
+            t.z = s1.z;
+
+            return t;
+
+        }
+
+c)
+
+        public static csharp operator -(csharp s1)
+
+        {
+
+            csharp t = new csharp();
+
+            t.x = -s1.x;
+
+            t.y = -s1.y;
+
+            t.z = -s1.z;
+
+            return t;
+
+        }
+
+d) None of the mentioned
+View Answer
+Answer: c
+Explanation: None.
+
+9. Selecting appropriate method out of number of overloaded methods by matching arguments in terms of number, type and order and binding that selected method to object at compile time is called?
+a) Static binding
+b) Static Linking
+c) Compile time polymorphism
+d) All of the mentioned
+View Answer
+Answer: d
+Explanation: None.
+
+10. Wrong statement about run time polymorphism is?
+a) The overridden base method should be virtual, abstract or override
+b) An abstract method is implicitly a virtual method
+c) An abstract inherited property cannot be overridden in a derived class
+d) Both override method and virtual method must have same access level modifier
+View Answer
+Answer: c
+Explanation: None.

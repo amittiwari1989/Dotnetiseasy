@@ -1,0 +1,1122 @@
+Online Test Name 	C#.Net
+Exam Type 	Multiple Choice Questions
+Category 	Computer Science Engineering Quiz
+
+
+1. Predict the output for the given set of code correctly.
+
+static void Main(string[] args)
+  {
+      int b= 11;
+      int c = 7;
+      int r = 5;
+      int e = 2;
+      int l;
+      int v = 109;
+      int k;
+      int z,t,p;
+      z = b * c;
+      t = b * b;
+      p = b * r * 2;
+      l = (b * c) + (r * e) + 10;
+      k = v - 8;
+      Console.WriteLine(
+		Convert.ToString(Convert.ToChar(z)) + " " + Convert.ToString(Convert.ToChar(t)) + 
+		Convert.ToString(Convert.ToChar(p)) + Convert.ToString(Convert.ToChar(l)) + 
+		Convert.ToString(Convert.ToChar(v)) + Convert.ToString(Convert.ToChar(k))
+	  );                
+      Console.ReadLine();
+    }
+
+    A. My Name
+    B. My nAme
+    C. My name
+    D. Myname 
+ Answer: Option C
+
+Explanation:
+
+Solving the expression l = (b * c) + (r * e) + 10 .While from left to right the parentheses are given preference first. Step 1 : b * c is 
+evaluated first inside first parentheses. Step 2 : 
+r * e is evaluated second on right side of first addition symbol . Step 3 : After evaluating both parentheses 10 is added to value of both. Output : My name.
+
+
+2. Select the relevant code set to fill up the blank for the following program :
+
+static void Main(string[] args)
+  {
+      int x = 10, y = 20;
+      int res;
+      /*_______________*/ 
+      Console.WriteLine(res);
+  }
+
+    A. x % y == 0 ? (x == y ? (x += 2):(y = x + y)):y = y*10;
+    B. x % y == 0 ? y += 10:(x += 10);
+    C. x % y == 0 ? return(x) : return (y);
+    D. All of the mentioned. 
+
+   
+
+Answer & Explanation
+
+Answer: Option B
+
+Explanation:
+
+{ int x = 10, y = 20; int res; x % y == 0 ? y += 10:(x += 10); Console.WriteLine(res); }
+
+
+
+3. Which is the String method used to compare two strings with each other ?
+
+    A. Compare To()
+    B. Compare()
+    C. Copy()
+    D. ConCat() 
+	
+ Answer: Option B
+
+Explanation:
+
+Compare() used to compare two strings by taking length of strings in considerations. 
+
+
+4. Minimum and Maximum range of values supported by ‘float’ data type are ?
+
+    A. 1.5 * 10 ^-40 to 3.4 * 10 ^38
+    B. 1.5 * 10 ^-45 to 3.4 * 10 ^30
+    C. 1.5 * 10 ^-45 to 3.4 * 10 ^38
+    D. 1.5 * 10 ^-45 to 3.4 * 10 ^37 
+	
+	
+ Answer: Option C
+
+Explanation: 
+
+
+5. Which datatype should be more preferred for storing a simple number like 35 to improve execution speed of a program?
+
+    A. sbyte
+    B. short
+    C. int
+    D. long 
+
+
+Answer & Explanation
+
+Answer: Option A
+
+Explanation:
+
+Wider datatype like int,long takes more time for manipulation of a program.
+
+
+
+6. What will be output of the following conversion ?
+
+static void Main(string[] args)
+ {
+     char a = 'A';
+     string b = "a";
+     Console.WriteLine(Convert.ToInt32(a));
+     Console.WriteLine(Convert.ToInt32(Convert.Tochar(b)));
+     Console.ReadLine();
+ }
+
+    A. 1, 97
+    B. 65, 97
+    C. 65, 97
+    D. 97, 1 
+	
+ Answer: Option C
+
+Explanation:
+
+ASCII value of character ‘a’ is 65 and ASCII value of string “a” is 97. Output: 65,97
+
+
+
+7. Predict the output for the following set of code :
+
+static void Main(string[] args)
+  {
+      int a = 3, b = 5, c = 1;
+      int z = ++b;
+      int y = ++c;
+      b = Convert.ToInt32((Convert.ToBoolean(z)) && (Convert.ToBoolean(y)) || Convert.ToBoolean(Convert.ToInt32(!(++a == b))));
+      a = Convert.ToInt32(Convert.ToBoolean(c) || Convert.ToBoolean(a--));
+      Console.WriteLine(++a);
+      Console.WriteLine(++b);
+      Console.WriteLine(c);
+  }
+
+    A. 2 ,2 ,1
+    B. 2 ,3 ,2
+    C. 2 ,2 ,2
+    D. 2 ,0 ,9 
+	
+ Answer: Option C
+
+Explanation:
+
+z = 6 as ++b. y = 2 as ++c. 6 && 2 = 1 (++a == b ) which is false as 4!=6. Now, !(false) = true i.e 1. So, 1 || 1 = 1. So, b = 1. Similarly, c = 2 and a = 4.Now, 2 || 4 = 1. So, a = 1. Hence ++a = 2,++b = 2, c = 2. Output : 2, 2, 2
+
+
+
+8. Scope of variable is related to definition of variable as:
+
+1. Region of code within which variable value is valid and hence can be accessed.
+2. No, relation with region where variable is declared its value is valid in entire scope.
+
+    A. a
+    B. b
+    C. a, b
+    D. None of the mentioned 
+
+ Answer: Option A
+
+Explanation:
+
+Scope of variable is the area or region within which variable is declared and hence intialized values of different kind. Based, on which operations of different kinds are carried out on that variable declared within that scope. Its value is preserved until and unless scope of that block ({ })is not expired because as soon as scope gets over. Hence, variable value gets expired. Hence, it’s inaccessible after it.
+
+
+
+9. Type of Conversion in which compiler is unable to convert the datatype implicitly is ?
+
+    A. ushort to long
+    B. int to uint
+    C. ushort to long
+    D. byte to decimal 
+	
+	
+ Answer: Option B
+
+Explanation:
+
+‘int’ is 32 bit signed integer whereas ‘uint’ is 32 bit unsigned integer .Range of int is larger than uint.So,compiler cannot implicitly convert from larger datatype to smaller datatype.
+
+
+10. Select output of the given set of Code :
+
+static void Main(string[] args)
+{
+    String name = "Dr.Gupta";
+    Console.WriteLine("Good Morning" + name);
+}
+
+    A. Dr.Gupta
+    B. Good Morning
+    C. Good Morning Dr.Gupta
+    D. Good Morning name 
+	
+	
+ Answer: Option C
+
+Explanation:
+
+How to intialize a string variable and concatenate string using ‘+’ operator. Output:Good Morning Dr.Gupta.
+
+
+
+========================================
+
+C# OOPS MCQs - C#.Net Object Oriented Programming Multiple Choice Questions and Answers
+
+
+1. What will be the output for the given set of code?
+
+namespace ConsoleApplication4
+{   
+    abstract class A 
+    {
+        public int i;
+        public abstract void display();
+    }    
+    class B: A 
+    {
+        public  int j;
+        public int sum;
+        public override void display() 
+        {
+            sum = i + j;
+            Console.WriteLine(+i + "\n" + +j);
+            Console.WriteLine("sum is:" +sum);
+        }
+    }    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            A obj = new B();
+            obj.i = 2;
+            B obj1 = new B();
+            obj1.j = 10;
+            obj.display();
+            Console.ReadLine();
+        }
+    }
+}
+
+    A. 2, 10 12
+    B. 0, 10 10
+    C. 2, 0 2
+    D. 0, 0 0 
+	
+ Answer: Option C
+
+Explanation:
+
+Abstract method implementation is processed in subclass ‘B’ .Also the object ‘obj’ of abstract class ‘A’ initializes value of i as 2.The object of class ‘B’ also initializes value of j as 10.Since, the method display() is called using object of class A which is ‘obj’ and hence i = 2 whereas j = 0 .So, sum = 2. Output : 2 0 sum is : 2
+
+
+2. Which keyword is used to refer baseclass constructor to subclass constructor?
+
+    A. This
+    B. static
+    C. base
+    D. extend 
+
+ Answer: Option C
+
+Explanation: 
+
+3. Choose the correct output for given set of code?
+
+enum per
+ {
+     a, 
+     b, 
+     c, 
+     d, 
+ }
+ per.a = 10;
+ Console.writeline(per.b);
+
+    A. 11
+    B. 1
+    C. 2
+    D. compile time error 
+	
+ Answer: Option D
+
+Explanation:
+
+It will report an error since enum element cannot be assigned a value outside the enum declaration.
+
+
+4. In Inheritance concept, which of the following members of base class are accessible to derived class members?
+
+    A. static
+    B. protected
+    C. private
+    D. shared 
+	
+	
+	 Answer: Option B
+
+Explanation: 
+
+
+
+5. Select the statement which should be added to the current set of code to get the output as 10 20 ?
+
+class baseclass
+{
+    protected int a = 20;
+}
+class derived : baseclass
+{
+    int a = 10;
+    public void math()
+    {
+         /* add code here */
+    }   
+}
+
+    A. Console.writeline( a + ” ” + this.a);
+    B. Console.Writeline( mybase.a + ” ” + a);
+    C. console.writeline(a + ” ” + base.a);
+    D. console.writeline(base.a + ” ” + a); 
+	
+ Answer: Option C
+
+Explanation: 
+
+
+6. What will be the output of the given code snippet?
+
+interface calc
+ {
+     void cal(int i);
+ }
+ class displayA :calc 
+ {
+     public int x;
+     public void cal(int i) 
+     {
+         x = i * i;            
+     }
+ }
+ class displayB :calc
+ {
+     public int x;
+     public void cal(int i)
+     {
+         x = i / i;
+     }
+ }
+ class Program
+ {
+     public static void Main(string[] args)
+     {            
+         displayA arr1 = new displayA();
+         displayB arr2 = new displayB();
+         arr1.x = 0;
+         arr2.x = 0;
+         arr1.cal(2);
+         arr2.cal(2);
+         Console.WriteLine(arr1.x + " " + arr2.x);
+         Console.ReadLine();
+     }
+ }
+
+    A. 0 0
+    B. 2 2
+    C. 4 1
+    D. 1 4 
+	
+ Answer: Option C
+
+Explanation:
+
+class displayA executes the interface calculate by doubling the value of item . Similarly class displayB implements the interface by dividing item by item.So, variable x of class displayA stores 4 and variable x of class displayB stores 1. Output : 4, 1
+
+
+
+7. Which keyword is used for correct implementation of an interface in C#.NET?
+
+    A. interface
+    B. Interface
+    C. intf
+    D. Intf 
+	
+	 Answer: Option A
+
+Explanation: 
+
+8. Correct way to define operator method or to perform operator overloading is?
+
+    A. public static op(arglist) { }
+    B. public static retval op(arglist) { }
+    C. public static retval operator op(arglist) { }
+    D. All of the mentioned 
+	
+	
+ Answer: Option C
+
+Explanation: 
+
+
+9. What would be output for the set of code?
+
+class maths
+ {
+     public int x;
+     public double y;
+     public int add(int a, int b)
+     {
+         x = a + b;
+         return x;
+     }
+     public int add(double c, double d)
+     {
+         y = c + d;
+         return (int)y;
+     }
+     public maths()
+     {
+         this.x = 0;
+         this.y = 0;
+     }
+ }    
+class Program
+{
+    static void Main(string[] args)
+    {
+        maths obj = new maths();
+        int a = 4;
+        double b = 3.5;
+        obj.add(a, a);
+        obj.add(b, b);
+        Console.WriteLine(obj.x + " " + obj.y);
+        Console.ReadLine();
+    }
+}
+
+    A. 4, 3.5
+    B. 8, 0
+    C. 7.5, 8
+    D. 8, 7 
+
+
+ Answer: Option D
+
+Explanation:
+
+
+
+10. What will be the output for the given set of code?
+
+ class A
+ {
+     public int i;
+     public void display() 
+     {
+         Console.WriteLine(i);
+     }
+ }    
+ class B: A 
+ {
+     public int j;
+     public void display() 
+     {
+         Console.WriteLine(j);
+     }
+ }    
+ class Program
+ {
+     static void Main(string[] args)
+     {
+         B obj = new B();
+         obj.i = 1;
+         obj.j = 2;
+         obj.display();
+         Console.ReadLine();
+     }
+ }
+
+    A. 0
+    B. 2
+    C. 1
+    D. Compile time error 
+	
+ Answer: Option B
+
+Explanation:
+
+When method display() is called using objects of class ‘B’. The method ‘display()’ for class ‘B’ is called instead of class ‘A’ as class ‘B’ is inherited by class ‘A’. Output :2 
+
+
+
+11. Select the sequence of execution of function f1(), f2() & f3() in C# .NET CODE?
+
+class base
+ {
+     public void f1() {}
+     public virtual void f2() {}
+     public virtual  void f3() {}
+ }
+ class derived :base
+ {
+     new public void f1() {}
+     public override void f2() {}
+     public new void f3() {}
+ } 
+ class Program
+ {
+     static void Main(string[] args)
+     {
+         baseclass b = new derived();
+         b.f1 ();
+         b.f2 ();
+         b.f3 ();
+     }
+ }
+
+    A. f1() of derived class get executed f2() of derived class get executed f3() of base class get executed
+    B. f1() of base class get executed f2() of derived class get executed f3() of base class get executed
+    C. f1() of base class get executed f2() of derived class get executed f3() of derived class get executed
+    D. f1() of derived class get executed f2() of base class get executed f3() of base class get executed 
+	
+ Answer: Option B
+
+Explanation: 
+
+
+12. What will be the correct output for the given code snippet?
+
+class maths 
+ {
+     int fact(int n) 
+     {
+         int result;
+         if (n == 1)
+         return 1;
+         result = fact(n - 1) * n;
+         return result;
+     }
+ } 
+ class Output 
+ {
+     static void main(String args[]) 
+     {
+         maths obj = new maths() ;
+         Console.WriteLine(obj.fact(4)*obj.fact(2));
+     }
+ }
+
+    A. 64
+    B. 60
+    C.
+
+    120
+    D. 48 
+	
+	
+	 Answer: Option D
+
+Explanation:
+
+4! = 4*3*2*1 & 2! = 2*1 .So, 24*2 = 48. Output : 48
+
+
+3. The correct way to define a variable of type struct abc among the following is?
+
+struct abc
+ { 
+     public string name;
+     protected internal int age;
+     private Single sal;
+ }
+
+    A. abc e = new abc();
+    B. abc();
+    C. abc e; e = new abc;
+    D. abc e = new abc; 
+	
+	 Answer: Option A
+
+Explanation:
+
+
+
+=============================================================
+
+C# Arrays and Strings MCQs - C#.Net Interview Objective Questions and Answers
+
+
+1. What is the advantage of using 2D jagged array over 2D rectangular array?
+
+    A. Easy initialization of elements
+    B. Allows unlimited elements as well as rows which had ‘0’ or are empty in nature
+    C. All of the mentioned
+    D. None of the mentioned 
+	
+	
+	 Answer: Option B
+
+Explanation:
+
+In many applications where 2 dimensional arrays are used,not all rows need to have all the elements i.e they are sparse.Many rows have 0 elements.In such cases it is better to use 2D jagged arrays as they allow unequal number of elements in each row and also allow for empty rows.
+
+
+2. Which statement is correct about following set of code ? 
+
+int[, ]a={{5, 4, 3},{9, 2, 6}};
+
+    A. ’a’ represents 1-D array of 5 integers
+    B. a.GetUpperBound(0) gives 9
+    C. ’a’ represents rectangular array of 2 columns and 3 arrays
+    D. a.GetUpperBound(0) gives 2 
+	
+	
+	 Answer: Option C
+
+Explanation:
+
+3. Choose Output for the following set of code :
+
+static void Main(string[] args)
+{
+    string s1 = "Hello" + " I " + "Love" + " ComputerScience ";
+    Console.WriteLine(s1);
+    Console.ReadLine();
+}
+
+    A. HelloILoveComputerScience
+    B. Hello I Love ComputerScience
+    C. Compile time error
+    D. Hello 
+	
+	 Answer: Option B
+
+Explanation:
+
+Here ‘+’ defined operator works as concatenation for strings. Output : Hello I Love ComputerScience.
+
+
+4. Which of these data type values is returned by equals() method of String class?
+
+    A. char
+    B. int
+    C. boolean
+    D. All of the mentioned 
+	
+	 Answer: Option C
+
+Explanation:
+
+equals() method of string class returns boolean value true if both the strings are equal and false if they are unequal.
+
+
+5. What will be the output for the given code snippet?
+
+static void Main(string[] args)
+  {
+      string s = " i love you";
+      Console.WriteLine(s.IndexOf('l') + "  " + s.lastIndexOf('o') + "  " + s.IndexOf('e'));
+      Console.ReadLine();
+  }
+
+    A. 3 5 7
+    B. 4 5 6
+    C. 3 9 6
+    D. 2 4 6 
+	
+	 Answer: Option C
+
+Explanation:
+
+indexof(‘l’) and lastIndexof(‘o’) are pre defined functions which are used to get the index of first and last occurrence of the character pointed by l and c respectively in the given array. Output : 3, 9, 6
+
+
+
+6. What will be the output of the following set of code?
+
+class sum   
+ {
+     public int x;
+     public int y;
+     public  int add (int a,  int b)
+     {
+         x = a + b;
+         y = x + b;
+         return 0;
+     }
+ }    
+ class Program
+ {
+     static void Main(string[] args)
+     {
+         sum obj1 = new sum();
+         sum obj2 = new sum();   
+         int a = 2;
+         obj1.add(a,  a + 1);
+         obj2.add(5,  a);
+         Console.WriteLine(obj1.x + "  " + obj2.y);     
+         Console.ReadLine();
+     }
+ }
+
+    A. 6, 9
+    B. 5, 9
+    C. 9, 10
+    D. 3, 2 
+	
+	 Answer: Option B
+
+Explanation:
+
+Here, a = 2, a + 1 = 2 + 1 = 3. So, a = 2, b = 3. x = 2 + 3 = 5. y = 5 + 3 = 8. Similarly, a = 5, b = a + 1 = 4. y = 5 + 4 = 9. Output : 5, 9.
+
+
+7. What will be the output for the given set of code?
+
+static void Main(string[] args)
+ {
+     String c = "Hello";
+     String a = c + "Bye";
+     Console.WriteLine(a);
+     Console.ReadLine();
+ }
+
+    A. “Hello Bye”
+    B. “HelloBye”
+    C. Hello Bye
+    D. HelloBye 
+	
+	 Answer: Option D
+
+Explanation:
+
+‘+’ operator method works in the form of concatenate method() and hence is used to join two strings together. Output : HelloBye
+
+
+8. What would be the output for the following set of code?
+
+static void Main(string[] args)
+ {
+     String obj = "hello";
+     String obj1 = "world";   
+     String obj2 = obj;
+     Console.WriteLine (obj.Equals(obj2) + "  " + obj2.CompareTo(obj) );
+     Console.ReadLine();
+ }
+
+    A. True True
+    B. False False
+    C. True 0
+    D. False 1 
+	
+	 Answer: Option C
+
+Explanation:
+
+Equal() checks if two string objects ‘obj’ and ‘obj2’ are equal or not and hence returns true or false.Similarly, “CompareTo” operator check two objects and since string obj2 = obj,it returns bool value ‘0’. Hence,they are equal. Output : True 0
+
+
+9. What will be the output of given set of code?
+
+static void main(string[] args)
+ {
+     int i;
+     int res = fun (out i);
+     console.writeline(res);
+     console.readline();
+ }
+ static int fun(out int i)
+ {
+     int s = 1;
+     i = 7;
+     for (int j = 1; j <= i; j++ )
+     s = s * j;
+     return s;
+ }
+
+    A. 4490
+    B. 5040
+    C. 5400
+    D. 3500 
+	
+	 Answer: Option B
+
+Explanation: 
+
+
+10. What will be the output the of given set of code?
+
+static void Main(string[] args)
+ {
+     int [] a = {1, 2, 3, 4, 5};
+     fun(a);
+     Console.ReadLine();
+ }
+ static void fun(params int[] b )
+ {
+     for (int i = 0; i < b.Length; i++)
+     {
+         b[i] = b[i] * 5 ;
+         Console.WriteLine(b[i] + "");
+     }
+ }
+
+    A. 1, 2, 3, 4, 5
+    B. 5, 10, 15, 20, 25
+    C. 5, 25, 125, 625, 3125
+    D. 6, 12, 18, 24, 30 
+	
+	 Answer: Option B
+
+Explanation:  Answer: Option B
+
+Explanation: 
+
+
+==================================
+
+C# Looping Statements MCQs - C#.Net Interview Objective Questions and Answers
+
+1. Select the output for the following set of code :
+
+ static void Main(string[] args)
+  {
+      int i = 0;
+      if (i == 0)
+      {
+          goto label;
+      }
+      label: Console.WriteLine("HI...");
+      Console.ReadLine();
+  }
+
+    A. Hi…infinite times
+    B. Code runs prints nothing
+    C. Hi Hi
+    D. Hi… 
+	
+	 Answer: Option D
+
+Explanation:
+
+for i = 0 ,if condition is satisfied as (i == 0).So,label statement is printed. Output : Hi
+
+
+
+2. Select the output for the following set of code :
+
+ static void Main(string[] args)
+  {
+      int i = 0, j = 0;
+      l1: while (i < 2)
+      {  
+          i++;
+          while (j < 3)
+          {
+              Console.WriteLine("loop\n");
+              goto l1;
+          }
+       }
+      Console.ReadLine();
+  }
+
+    A. loop is printed infinite times
+    B. loop
+    C. loop loop
+    D. Compile time error .
+	
+	
+	 Answer: Option C
+
+Explanation:
+
+Since outer while loop i.e while(i<2) executes only for two times.Hence,loop while executing third time for (j<3) could not be able to satisfy condition i<2 as i = 2.hence,loop breaks and control goes out of loop. Output : loop loop.
+
+
+3. Select output for the following set of code :
+
+static void Main(string[] args)
+ {
+     int i, s = 0, a = 1, d;
+     i = Convert.ToInt32(Console.ReadLine());
+     do
+     {
+         d = i % (2 * 4);
+         s = s + d * a;
+     }while ((Convert.ToInt32(i = i / (2 * 4))) != 0 && (Convert.ToBoolean(Convert.ToInt32((a) = (a * 10)))));
+     Console.WriteLine(s);
+     Console.ReadLine();
+ }
+enter i = 342.
+
+    A. It finds binary equivalent of i
+    B. It finds octal equivalent of i
+    C. It finds sum of digits of i
+    D. It finds reverse of i 
+	
+	 Answer: Option B
+
+Explanation:
+
+None. Output : i = 342. s = 526.
+
+
+4. Correct syntax for do while loop is :
+
+    A.
+
+    do;
+
+       {
+
+        statement;
+
+       }while (condition);
+    B.
+
+    do(condition)
+
+       {
+
+         statement;
+
+       }while;
+    C.
+
+    do
+
+       {
+
+         statement;
+
+       }while (condition)
+    D.
+
+    do
+
+       {
+
+            statement;
+
+       }while (condition); 
+	   
+	   
+	    Answer: Option D
+
+Explanation:
+
+By definition Output:do { statement; }while (condition);
+
+
+
+5. Select the output for the following set of code:
+
+static void Main(string[] args)
+ {
+     int i, s = 0;
+     for (i = 1; i <= 10; s = s + i, i++);
+     {
+         Console.WriteLine(s);
+     }
+     Console.ReadLine();
+ }
+
+    A. Code report error
+    B. Code runs in infinite loop condition
+    C. Code gives output as 0 1 3 6 10 15 21 28 36 45
+    D. Code give output as 55 
+	
+	
+	 Answer: Option D
+
+Explanation:
+
+Since occurrence of termination symbol(;) at end of for loop. Output: 55.
+
+
+
+6. Which statement is correct among the mentioned statements?
+
+1. The for loop works faster than a while loop
+2. for( ; ; )implements an infinite loop
+
+    A. Only 1 is correct
+    B. Only 2 is correct
+    C. Both 1 and 2 are correct
+    D. Both 1 and 2 are incorrect 
+	
+	
+	
+	 Answer: Option B
+
+Explanation:
+
+7. What is the output for the following code ?
+
+static void Main(string[] args)
+ {
+     int a = 15, b = 10, c = 1;
+     if (Convert.ToBoolean(a) && (b > c))
+     {
+         Console.WriteLine("cquestionbank");
+     }
+     else
+     {
+         break;
+     }
+ }
+
+    A. cquestionbank
+    B. It will print nothing
+    C. Compile time error
+    D. Run time error 
+	
+	
+ Answer: Option C
+
+Explanation:
+
+Keyword “break” is not part of if-else statement.This keyword is used in case of loop or switch case statement.
+
+8. What is the output for the following code ?
+
+static void Main(string[] args)
+  {  
+      int a = 5;
+      if (Convert.ToBoolean((.002f) -(0.1f)))
+      Console.WriteLine("Sachin Tendulkar");
+      else if (a == 5)
+      Console.WriteLine("Rahul Dravid");
+      else
+      Console.WriteLine("Ms Dhoni");
+      Console.ReadLine();
+  }
+
+    A. Rahul Dravid
+    B. Sachin Tendulkar
+    C. Ms Dhoni
+    D. Warning : Unreachable Code 
+	
+	 Answer: Option B
+
+Explanation:
+
+(0.002 – 0.1f) not equivalent to zero hence it is true. So,only first if clause will execute and print:Sachin Tendulkar on console.As,first condition is always true so no else if statement will be executed. Output: Sachin Tendulkar
+
+9. Select the output for the following set of code :
+
+ static void Main(string[] args)
+  {
+      int  i = 9 , j = 7;
+      switch (i - j + 3)
+      {
+      case 9: 7:
+          j += 6;
+          break;
+      case 5:
+          i -= 4;
+          break;
+      }
+      Console.WriteLine(i + "\n" + j);
+      Console.ReadLine();
+  }
+
+    A. 5 7
+    B. 9 13
+    C. Compile time error
+    D. 9 7 
+	
+	 Answer: Option C
+
+Explanation:
+
+Invalid expression’7:’ in case 9:7:.
+
+
+10. Select the output for the following set of Code:
+
+ static void Main(string[] args)
+  {
+      int n, r;
+      n = Convert.ToInt32(Console.ReadLine());
+      while (n > 0)
+      {
+          r = n % 10;
+          n = n / 10;
+          Console.WriteLine(+r);
+      }
+      Console.ReadLine();
+  }
+ for n = 5432.
+
+    A. 3245
+    B. 2354
+    C. 2345
+    D. 5423 
+	
+	 Answer: Option C
+
+Explanation:
+
+Reverse of number using while loop. Output: 2345.
+

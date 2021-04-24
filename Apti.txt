@@ -1,0 +1,373 @@
+
+
+1. Applying for Seasonal Employment occurs when a person requests to be considered for a job that is dependent on a particular season or time of year. Which situation below is the best example of Applying for Seasonal Employment?
+
+    A. The ski instructors at Top of the Peak Ski School work from December through March.
+    B. Matthew prefers jobs that allow him to work outdoors.
+    C. Lucinda makes an appointment with the beach resort restaurant manager to interview for the summer waitressing position that was advertised in the newspaper.
+    D. Doug’s ice cream shop stays open until 11 p.m. during the summer months.
+
+Answer: Option C
+
+Explanation:
+
+Although the ski instructors at Top of the Peak Ski School do work seasonally, choice a does not describe anyone applying for seasonal employment. In choice b, the statement that Matthew likes to work outdoors tells us nothing about seasonal employment or someone applying for it. And although choice d describes a business with seasonal hours, it does not describe a person applying for seasonal work. Choice c, on the other hand, very specifically depicts a person, Lucinda, who is applying for a job as a summer waitress at a beach resort, which is dependent upon a particular season of the year.
+
+Learn more problems on : Matching Definitions
+
+Discuss about this problem : Discuss in Forum
+
+2. Here are some words translated from an artificial language.
+mallonpiml means blue light
+mallontifl means blueberry
+arpantifl means raspberry
+Which word could mean “lighthouse”?
+
+    A. tiflmallon
+    B. pimlarpan
+    C. mallonarpan
+    D. pimldoken
+
+Answer: Option D
+
+Explanation:
+
+Mallon means blue; piml means light; tifl means berry; and arpan means “rasp” in raspberry. The word piml, which means light, is required for the word lighthouse. That rules out choices a and c. Arpan in choice b means “rasp,” so that rules out choice b. That leaves choice d the only possible answer.
+
+Learn more problems on : Artificial Language
+
+Discuss about this problem : Discuss in Forum
+
+3. CMM, EOO, GQQ,  _____ , KUU
+
+    A. GRR
+    B. GSS
+    C. ISS
+    D. ITT
+
+Answer: Option C
+
+Explanation:
+
+The first letters are in alphabetical order with a letter skipped in between each segment: C, E, G, I, K. The second and third letters are repeated; they are also in order with a skipped letter: M, O, Q, S, U.
+
+Learn more problems on : Letter Series
+
+Discuss about this problem : Discuss in Forum
+
+4. Fact 1: Robert has four vehicles.
+Fact 2: Two of the vehicles are red.
+Fact 3: One of the vehicles is a minivan.
+If the first three statements are facts, which of the following statements must also be a fact?
+I. Robert has a red minivan.
+II. Robert has three cars.
+III. Robert’s favorite color is red.
+
+    A. I only
+    B. II only
+    C. II and III only
+    D. None of the statements is a known fact.
+
+Answer: Option D
+
+Explanation:
+
+There is not enough information to support any of the statements. Robert is known to have a minvan, but it is not known which of his vehicles is red. Robert may have a pickup or sport utility vehicle, so the second statement cannot be supported. There is no way to know if Robert’s favorite color is red (statement III).
+
+Learn more problems on : Logical Problems
+
+Discuss about this problem : Discuss in Forum
+
+5. Fact 1: Eyeglass frames cost between $35 and $350.
+Fact 2: Some eyeglass frames are made of titanium.
+Fact 3: Some eyeglass frames are made of plastic.
+If the first three statements are facts, which of the following statements must also be a fact?
+I. Titanium eyeglass frames cost more than plastic frames.
+II. Expensive eyeglass frames last longer than cheap frames.
+III. Only a few eyeglass frames cost less than $35.
+
+    A. II only
+    B. I and II only
+    C. II and III only
+    D. None of the statements is a known fact.
+
+Answer: Option D
+
+Explanation:
+
+There is no information in the facts to support statements I or II. Statement III is clearly wrong because, according to Fact 1, no frames cost less than $35.
+
+Learn more problems on : Logical Problems
+
+Discuss about this problem : Discuss in Forum
+
+6. .
+
+    A. .
+    B. .
+    C. .
+    D. .
+
+Answer: Option B
+
+Explanation:
+
+Each arrow in this continuing series moves a few degrees in a clockwise direction. Think of these arrows as the big hand on a clock. The first arrow is at noon. The last arrow before the blank would be 12:40. Choice b, the correct answer, is at 12:45.
+
+Learn more problems on : Symbol Series
+
+Discuss about this problem : Discuss in Forum
+
+7. Today’s workforce has a new set of social values. Ten years ago, a manager who was offered a promotion in a distant city would not have questioned the move. Today, a manager in that same situation might choose family happiness instead of career advancement.
+This paragraph best supports the statement that
+
+    A. most managers are not loyal to the corporations for which they work.
+    B. businesses today do not understand their employees’ needs.
+    C. employees’ social values have changed over the past ten years.
+    D. career advancement is not important to today’s business managers.
+    E. companies should require their employees to accept promotions.
+
+Answer: Option C
+
+Explanation:
+
+A change in employee social values over the past ten years is implied in the whole paragraph, but particularly in the first sentence. Choice a is incorrect because the loyalty of the managers to their corporations is never discussed. There is no support for choice b. In choice d, perhaps career advancement is less important than it once was, but the paragraph does not indicate that advancement is unimportant to managers. Choice e is an opinion that is not supported.
+
+Learn more problems on : Analyzing Arguments
+
+Discuss about this problem : Discuss in Forum
+
+8. In the past, consumers would rarely walk into an ice cream store and order low-fat ice cream. But that isn’t the case today. An increasing health consciousness combined with a much bigger selection of tasty low-fat foods in all categories has made low-fat ice cream a very profitable item for ice cream store owners.
+This paragraph best supports the statement that
+
+    A. low-fat ice cream produces more revenue than other low-fat foods.
+    B. ice cream store owners would be better off carrying only low-fat ice cream.
+    C. ice cream store owners no longer think that low-fat ice cream is an unpopular item.
+    D. low-fat ice cream is more popular than other kinds of ice cream.
+    E. consumers are fickle and it is impossible to please them.
+
+Answer: Option C
+
+Explanation:
+
+This choice is supported as the best answer because the paragraph indicates that low-fat ice cream was once an unpopular item, but now, because consumers are more health conscious and because there is a wider array of tasty low-fat foods, low-fat ice cream is a profitable item for ice cream store owners. There is no indication that choices a, b, d, or e are true based on the information given.
+
+Learn more problems on : Analyzing Arguments
+
+Discuss about this problem : Discuss in Forum
+
+9. 11 14 14 17 17 20 20
+
+    A. 23 23
+    B. 23 26
+    C. 21 24
+    D. 24 24
+    E. 24 27
+
+Answer: Option A
+
+Explanation:
+
+This is a simple addition series with repetition. It adds 3 to each number to arrive at the next, which is repeated before 3 is added again.
+
+Learn more problems on : Number Series
+
+Discuss about this problem : Discuss in Forum
+
+10. SCD, TEF, UGH, ____, WKL
+
+    A. CMN
+    B. UJI
+    C. VIJ
+    D. IJT
+
+Answer: Option C
+
+Explanation:
+
+There are two alphabetical series here. The first series is with the first letters only: STUVW. The second series involves the remaining letters: CD, EF, GH, IJ, KL.
+
+Learn more problems on : Letter Series
+
+Discuss about this problem : Discuss in Forum
+
+11. B2CD,  _____ BCD4, B5CD, BC6D
+
+    A. B2C2D
+    B. BC3D
+    C. B2C3D
+    D. BCD7	
+
+Answer: Option B
+
+Explanation:
+
+Because the letters are the same, concentrate on the number series, which is a simple 2, 3, 4, 5, 6 series, and follows each letter in order.
+
+Learn more problems on : Letter Series
+
+Discuss about this problem : Discuss in Forum
+
+12. .
+
+    A. .
+    B. .
+    C. .
+    D. .
+
+Answer: Option D
+
+Explanation:
+
+This sequence concerns the number of sides on each figure. In the first segment, the three figures have one side, and then two sides, and then three sides. In the second segment, the number of sides increases and then decreases. In the third segment, the number of sides continues to decrease.
+
+Learn more problems on : Symbol Series
+
+Discuss about this problem : Discuss in Forum
+
+13. Here are some words translated from an artificial language. 
+morpirquat means birdhouse 
+beelmorpir means bluebird 
+beelclak means bluebell 
+Which word could mean “houseguest”?
+
+    A. morpirhunde
+    B. beelmoki
+    C. quathunde
+    D. clakquat
+
+Answer: Option C
+
+Explanation:
+
+Morpir means bird; quat means house; beel means blue; clak means bell. Choice c, which begins with quat, is the only possible option.
+
+Learn more problems on : Artificial Language
+
+Discuss about this problem : Discuss in Forum
+
+14. Today’s high school students spend too much time thinking about trivial and distracting matters such as fashion. Additionally, they often dress inappropriately on school grounds. Rather than spending time writing another detailed dress policy, we should make school uniforms mandatory. If students were required to wear uniforms, it would increase a sense of community and harmony in our schools and it would instill a sense of discipline in our students. Another positive effect would be that teachers and administrators would no longer have to act as clothing police, freeing them up to focus on more important issues.
+This paragraph best supports the statement that
+
+    A. inappropriate clothing leads to failing grades.
+    B. students who wear school uniforms get into better colleges.
+    C. teachers and administrators spend at least 25% of their time enforcing the dress code.
+    D. students are not interested in being part of a community.
+    E. school uniforms should be compulsory for high school students.
+
+Answer: Option E
+
+Explanation:
+
+The support for choice e is in the third sentence “. . . we should make school uniforms mandatory.” There is no evidence provided to support choices a, b, and d. And although we know that teachers and administrators are spending some of their time enforcing dress code, the paragraph does not quantify how much of their time is spent that way, so there is no support for choice c.
+
+Learn more problems on : Analyzing Arguments
+
+Discuss about this problem : Discuss in Forum
+
+15. 13 29 15 26 17 23 19
+
+    A. 21 23
+    B. 20 21
+    C. 20 17
+    D. 25 27
+    E. 22 20
+
+Answer: Option B
+
+Explanation:
+
+Here, there are two alternating patterns, with every other number following a different pattern. The first pattern begins with 13 and adds 2 to each number to arrive at the next; the alternating pattern begins with 29 and subtracts 3 each time.
+
+Learn more problems on : Number Series
+
+Discuss about this problem : Discuss in Forum
+
+16. The school principal has received complaints from parents about bullying in the school yard during recess. He wants to investigate and end this situation as soon as possible, so he has asked the recess aides to watch closely. Which situation should the recess aides report to the principal?
+
+    A. A girl is sitting glumly on a bench reading a book and not interacting with her peers.
+    B. Four girls are surrounding another girl and seem to have possession of her backpack.
+    C. Two boys are playing a one-on-one game of basketball and are arguing over the last basket scored.
+    D. Three boys are huddled over a handheld video game, which isn’t supposed to be on school grounds.
+
+Answer: Option B
+
+Explanation:
+
+Seeing four girls surrounding another girl, while in possession of her backpack, is the most suspicious of the incidents described.
+
+Learn more problems on : Making Judgments
+
+Discuss about this problem : Discuss in Forum
+
+17. Violating an Apartment Lease occurs when a tenant does something prohibited by the legally binding document that he or she has signed with a landlord. Which situation below is the best example of Violating an Apartment Lease?
+
+    A. Tim has decided to move to another city, so he calls his landlord to tell him that he is not interested in renewing his lease when it expires next month.
+    B. Valerie recently lost her job and, for the last three months, has neglected to pay her landlord the monthly rent they agreed upon in writing when she moved into her apartment eight months ago.
+    C. Mark writes a letter to his landlord that lists numerous complaints about the apartment he has agreed to rent for two years.
+    D. Leslie thinks that her landlord is neglecting the building in which she rents an apartment. She calls her attorney to ask for advice.
+
+Answer: Option B
+
+Explanation:
+
+Valerie signed a legally binding document that requires her to pay a monthly rent for her apartment and she has failed to do this for the last three months. Therefore, she has violated her apartment lease.
+
+Learn more problems on : Matching Definitions
+
+Discuss about this problem : Discuss in Forum
+
+18. Here are some words translated from an artificial language.
+slar means jump
+slary means jumping
+slarend means jumped
+Which word could mean “playing”?
+
+    A. clargslarend
+    B. clargy
+    C. ellaclarg
+    D. slarmont
+
+Answer: Option B
+
+Explanation:
+
+According to this language, slar means jump. The suffix –ing is represented by –y. Since choice b is the only one that ends in the letter y, this is the only possible option.
+
+Learn more problems on : Artificial Language
+
+Discuss about this problem : Discuss in Forum
+
+19. DEF, DEF2, DE2F2, _____, D2E2F3
+
+    A. DEF3	
+    B. D3EF3	
+    C. D2E3F
+    D. D2E2F2	
+
+Answer: Option D
+
+Explanation:
+
+In this series, the letters remain the same: DEF. The subscript numbers follow this series: 1,1,1; 1,1,2; 1,2,2; 2,2,2; 2,2,3.
+
+Learn more problems on : Letter Series
+
+Discuss about this problem : Discuss in Forum
+
+20. guitar
+
+    A. band
+    B. teacher
+    C. songs
+    D. strings
+
+Answer: Option D
+
+Explanation:
+
+A guitar does not exist without strings, so strings are an essential part of a guitar. A band is not necessary to a guitar (choice a). Guitar playing can be learned without a teacher (choice b). Songs are byproducts of a guitar (choice c).
+
+Learn more problems on : Essential Part
+
+Discuss about this problem : Discuss in Forum
