@@ -1,0 +1,55 @@
+﻿<script>
+
+        $("#AddComment").click(function () {
+            $.post("../../Artical/AddComment",
+             {
+                topic_id: $("#topic_id").val(),
+                 Comment: $("#Comment").val()
+             },
+             function (data, status) {
+                 $.get("../../Artical/ViewComment?topic_id=" + @Model.topic_id, function (data, status) {
+                     var Comments = JSON.parse(data);
+                     if(Comments!=null)
+                    for (var i = 0; i < Comments.length; i++) {
+
+                        let current_datetime = new Date(Comments[i].created_date);
+                        let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds() ;
+                         //console.log(formatted_date)
+
+                         $("#div_comments").append("<label class='col-md-6 control-label'>" + "<img src='/Image/User_Avatar.png' style='width: 13px;margin-right:4px'/>" + Comments[i].display_name + "</label><blockquote>"+ Comments[i].Comments +"</blockquote><p style='margin-top: -50px;text-align: right;font-size: 12px;'>"+formatted_date+"</p>");
+                    }
+
+                });
+            });
+
+        });
+
+</script>
+
+
+@*<script>
+
+        $("#AddComment").click(function () {
+            $.post("../../Artical/AddComment",
+             {
+                topic_id: $("#topic_id").val(),
+                 Comment: $("#Comment").val()
+             },
+             function (data, status) {
+                 $.get("../../Artical/ViewComment?topic_id=" + @Model.topic_id, function (data, status) {
+                    var Comments = JSON.parse(data);
+                    for (var i = 0; i < Comments.length; i++) {
+
+                        let current_datetime = new Date(Comments[i].created_date);
+                        let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds() ;
+                         //console.log(formatted_date)
+
+                         $("#div_comments").append("<label class='col-md-2 control-label'>" + "<img src='/Image/User_Avatar.png' style='width: 13px;margin-right:4px'/>" + Comments[i].display_name + "</label><blockquote>"+ Comments[i].Comments +"</blockquote><p style='margin-top: -50px;text-align: right;font-size: 12px;'>"+formatted_date+"</p>");
+                    }
+
+                });
+            });
+
+        });
+
+</script>*@

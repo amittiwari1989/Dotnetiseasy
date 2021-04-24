@@ -1,0 +1,29 @@
+﻿@model List<TS.ManageContents.code_topics>
+@{
+    ViewBag.Title = "MyArticals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Articals</h2>
+
+<style>
+    .Content p {
+        color: #7f888f;
+    }
+</style>
+<div class="Content">
+
+    @foreach (var item in Model)
+    {
+        <a href="/Artical/EditPost/@item.topic_id.ToString()">
+            <h2 id="@item.topic_id.ToString()">@item.topic_subject</h2>
+
+            <p>@item.code_topicscol</p>
+
+
+        </a>
+
+
+        <hr class="major" />
+    }
+</div>

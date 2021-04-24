@@ -1,0 +1,34 @@
+﻿@model List<TS.ManageContents.code_topics>
+
+@{
+    ViewBag.Title = "Dot Net Is Easy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .Content p {
+    color:#7f888f;}
+</style>
+<p>Welcome to dotnetiseasy.com site. you will learn here to create basic software and website. you will learn HTML syntax and other stuff. you will also able to learn SQL syntax with exampal.
+  </p>
+<p>
+    We will try to take care of all difficulties faced during developing website and devopling any software in .NET using visual studio. We will also share experiance and some common codes which will help you to work fast.
+</p>
+<p>
+    You are requested to share your experiance and code snippet so freshers can get help from one place only.
+</p>
+<div class="Content">
+
+    @foreach (var item in Model)
+    {
+        <a href="@(string.IsNullOrEmpty(item.URL) ?  "Artical/"+item.Language+"/"+item.topic_id.ToString():item.Language+"/"+item.URL)">
+<h2 id="@item.topic_id.ToString()">@item.topic_subject</h2>
+
+<p>@item.code_topicscol</p>
+
+
+</a>
+
+
+<hr class="major" />
+    }
+</div>

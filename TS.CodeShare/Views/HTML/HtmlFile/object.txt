@@ -1,0 +1,84 @@
+<object classid="clsid:F08DF954-8592-11D1-B16A-00C0F0283628" id="Slider1" width="100" height="50">
+  <param name="BorderStyle" value="1" />
+  <param name="MousePointer" value="0" />
+  <param name="Enabled" value="1" />
+  <param name="Min" value="0" />
+  <param name="Max" value="10" />
+</object>
+
+Definition and Usage
+The <object> tag is used to include objects such as images, audio, videos, Java applets, ActiveX, PDF, and Flash.
+
+The object element was intended to replace the img and applet elements. However, because of bugs and a lack of browser support this has not happened.
+
+The object support in browsers depend on the object type. Unfortunately, the major browsers use different codes to load the same object type.
+
+Luckily, the object element provides a solution. If the object element is not displayed, the code between the <object> and </object> tags will be executed. This way we can have several nested object elements (one for each browser).
+
+
+Optional Attributes
+DTD indicates in which DTD the attribute is allowed. S=Strict, T=Transitional, and F=Frameset.
+
+Attribute Value Description DTD 
+align left
+right
+top
+bottom Defines the text alignment around the object TF 
+archive URL A space separated list of URL's to archives. The archives contains resources relevant to the object STF 
+border pixels Defines a border around the object TF 
+classid class_ID Defines a class ID value as set in the Windows Registry or a URL STF 
+codebase URL Defines where to find the code for the object STF 
+codetype MIME_type The internet media type of the code referred to by the classid attribute STF 
+data URL Defines a URL that refers to the object's data STF 
+declare declare Defines that the object should only be declared, not created or instantiated until needed STF 
+height pixels Defines the height of the object STF 
+hspace pixels Defines the horizontal spacing around the object TF 
+name name Defines the name for an object (to use in scripts) STF 
+standby text Defines a text to display while the object is loading STF 
+type MIME_type Defines the MIME type of data specified in the data attribute STF 
+usemap URL Specifies a URL of a client-side image map to be used with the object STF 
+vspace pixels Defines the vertical spacing around the object TF 
+width pixels Defines the width of the object STF 
+
+
+--------------------------------------------------------------------------------
+
+Standard Attributes
+The <object> tag supports the following standard attributes:
+
+Attribute Value Description DTD 
+class classname Specifies a classname for an element STF 
+dir rtl
+ltr Specifies the text direction for the content in an element STF 
+id id Specifies a unique id for an element STF 
+lang language_code Specifies a language code for the content in an element STF 
+style style_definition Specifies an inline style for an element STF 
+tabindex number Specifies the tab order of an element STF 
+title text Specifies extra information about an element STF 
+xml:lang language_code Specifies a language code for the content in an element, in XHTML documents STF 
+
+More information about Standard Attributes.
+
+
+--------------------------------------------------------------------------------
+
+Event Attributes
+The <object> tag supports the following event attributes:
+
+Attribute Value Description DTD 
+onclick script Script to be run on a mouse click STF 
+ondblclick script Script to be run on a mouse double-click STF 
+onmousedown script Script to be run when mouse button is pressed STF 
+onmousemove script Script to be run when mouse pointer moves STF 
+onmouseout script Script to be run when mouse pointer moves out of an element STF 
+onmouseover script Script to be run when mouse pointer moves over an element STF 
+onmouseup script Script to be run when mouse button is released STF 
+onkeydown script Script to be run when a key is pressed STF 
+onkeypress script Script to be run when a key is pressed and released STF 
+onkeyup script Script to be run when a key is released STF 
+
+More information about Event Attributes.
+
+
+--------------------------------------------------------------------------------
+

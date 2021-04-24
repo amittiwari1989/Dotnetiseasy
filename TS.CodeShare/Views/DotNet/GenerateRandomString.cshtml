@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "GenerateRandomString";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Generate Random Number And Random String In C#</h2>
+<p>
+    C# Random class provides functionality to generate random numbers in C#. The Random class constructors have two overloaded forms. It takes either no value or it takes a seed value
+</p>
+<pre class="line-numbers" data-start="1"><code class="language-csharp">
+public static string GetRandomString(int length,bool includeAlphabet =true, bool includeNumbers = true,<br>bool includespecialChar = false,bool capsOnly=false)
+        {
+            Random ran = new Random();
+            String b = "";
+            if (includeAlphabet)
+                b += "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            if (includeNumbers)
+                b += "1234567890";
+            if(includespecialChar)
+                b+="!@@#$%^&amp;*()_";
+            String random = "";
+            for (int i = 0; i &lt; length; i++)
+            {
+                int a = ran.Next(b.Length);
+                random = random + b.ElementAt(a);
+            }
+            return (capsOnly?random.ToUpper(): random);
+        }
+            </code>
+</pre>

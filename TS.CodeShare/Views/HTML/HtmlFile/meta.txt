@@ -1,0 +1,66 @@
+<html>
+<head></head>
+
+<font size=4>
+The &#60;meta> tag provides information about the HTML document. Metadata will not be displayed on the page.<BR><BR>
+
+Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.<BR><BR>
+
+The &#60;meta> tag always goes inside the head element.<BR><BR>
+
+The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services.<BR><BR>
+Syntax is:<BR><font size=5 style="background-color:orange">
+&#60;meta name="description" content="Free Web tutorials" />
+&#60;meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+&#60;meta name="author" content="Hege Refsnes" />
+&#60;meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
+--------------------------------------------------------------------------------
+Tips and Notes
+Note: Metadata is always passed as name/value pairs.
+
+
+--------------------------------------------------------------------------------
+
+Required Attributes
+DTD indicates in which DTD the attribute is allowed. S=Strict, T=Transitional, and F=Frameset.
+
+Attribute Value Description DTD 
+content text Specifies the content of the meta information STF 
+
+Optional Attributes
+Attribute Value Description DTD 
+http-equiv content-type
+content-style-type
+expires
+refresh
+set-cookie Provides an HTTP header for the information in the content attribute STF 
+name author
+description
+keywords
+generator
+revised
+others Provides a name for the information in the content attribute STF 
+scheme format/URI Specifies a scheme to be used to interpret the value of the content attribute STF 
+
+
+--------------------------------------------------------------------------------
+
+Standard Attributes
+The <meta> tag supports the following standard attributes:
+
+Attribute Value Description DTD 
+dir rtl
+ltr Specifies the text direction for the content in an element STF 
+lang language_code Specifies a language code for the content in an element STF 
+xml:lang language_code Specifies a language code for the content in an element, in XHTML documents STF 
+
+More information about Standard Attributes.
+
+
+--------------------------------------------------------------------------------
+
+Event Attributes
+The <meta> tag does not support any event attributes.
+
+More information about Event Attributes.
+

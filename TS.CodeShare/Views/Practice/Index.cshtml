@@ -1,0 +1,25 @@
+﻿@*@using TS.ManageContents
+@model List<QuestionGroup>*@
+@using System.Data
+@model DataSet
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Practice Sets</h2>
+<div class="Content">
+
+    @*@foreach (var item in Model)*@
+@foreach (DataRow DR in Model.Tables[0].Rows)
+{
+        <a href="~/Practice/ViewQuestion?QGid=@DR["QGid"]">
+            <p>@DR["QuestionGroupName"] (@DR["TotalQuestions"] Questions)</p> (Total Test Taken @DR["TestTaken"])
+        </a>
+
+        <hr class="major" />
+    }
+</div>
+@*<a href="whatsapp://send?text=Take a test here https://www.dotnetiseasy.com/Practice" data-action="https://www.dotnetiseasy.com/Practice">Share via Whatsapp</a>*@
+@*<a href="whatsapp://send?text=<<HERE GOES THE URL ENCODED TEXT YOU WANT TO SHARE>>" data-action="share/whatsapp/share">Share via Whatsapp</a>*@

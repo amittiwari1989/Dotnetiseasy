@@ -1,0 +1,105 @@
+﻿@model TS.ManageContents.code_topics
+@{
+    ViewBag.meta = @Model.search_tags;
+    ViewBag.Title = @Model.topic_subject;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+<h2>@Model.topic_subject</h2>
+<p>
+    @Model.topic_details
+</p>
+@*<p>@Model.code_topicscol</p>*@
+if (!string.IsNullOrEmpty(Model.ArticalBody))
+{
+    <div class="row" style="max-width: 10em">
+        <pre class="line-numbers" data-start="1"><code class="language-csharp">
+@Model.ArticalBody
+            </code>
+</pre>
+    </div>
+    }
+}
+@if (!string.IsNullOrEmpty(Model.fileName))
+{
+    this.GetOutputWriter().Write(File.ReadAllText(Server.MapPath("/Views/HTML/" + Model.fileName)));
+}
+
+@if (Session["uid"] == null)
+{
+    @Html.ActionLink("Login for comment", "Login", "Account", new { returnUrl = Request.Url }, null)
+}
+else
+{
+    using (Html.BeginForm()) // "#", "", FormMethod.Post, new { id = "CommentForm", @class = "form-horizontal", role = "form" })
+    {
+        //@Html.AntiForgeryToken()
+
+        @Html.Hidden("topic_id")
+        <div class="form-group">
+            @Html.LabelFor(m => m.Comment, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Comment, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Comment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="AddComment" name="AddComment" value="Post Comment" class="btn btn-default" />
+            </div>
+        </div>
+    }
+}
+
+<div id="div_comments">
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $.get("../../Artical/ViewComment?topic_id=" + @Model.topic_id, function (data, status) {
+            var Comments = JSON.parse(data);
+            for (var i = 0; i < Comments.length; i++) {
+
+                let current_datetime = new Date(Comments[i].created_date);
+                let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds() ;
+                //console.log(formatted_date)
+
+                $("#div_comments").append("<label class='col-md-6 control-label'>" + "<img src='/Image/User_Avatar.png' style='width: 13px;margin-right:4px'/>" + Comments[i].display_name + "</label><blockquote>"+ Comments[i].Comments +"</blockquote><p style='margin-top: -50px;text-align: right;font-size: 12px;'>"+formatted_date+"</p>");
+            }
+
+        });
+
+    });
+</script>
+
+
+<script>
+        var TopicId = @Model.topic_id;
+
+            $("#AddComment").click(function () {
+                $.post("../../Artical/AddComment",
+                 {
+                     topic_id: $("#topic_id").val(),
+                     Comment: $("#Comment").val()
+                 },
+                 function (data, status) {
+                     $.get("../../Artical/ViewComment?topic_id=" + TopicId, function (data, status) {
+                         var Comments = JSON.parse(data);
+                         $("#div_comments")[0].innerHTML="";
+                         for (var i = 0; i < Comments.length; i++) {
+
+                             let current_datetime = new Date(Comments[i].created_date);
+                             let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds() ;
+                             //console.log(formatted_date)
+
+                             $("#div_comments").append("<label class='col-md-6 control-label'>" + "<img src='/Image/User_Avatar.png' style='width: 13px;margin-right:4px'/>" + Comments[i].display_name + "</label><blockquote>"+ Comments[i].Comments +"</blockquote><p style='margin-top: -50px;text-align: right;font-size: 12px;'>"+formatted_date+"</p>");
+                         }
+
+                     });
+                 });
+
+            });
+
+</script>

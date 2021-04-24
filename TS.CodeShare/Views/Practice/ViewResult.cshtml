@@ -1,0 +1,87 @@
+﻿@using TS.ManageContents
+@model List<QuestionMaster>
+@{
+    ViewBag.Title = "ViewResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Result</h2>
+
+<div id="printableArea">
+    @foreach (QuestionMaster item in Model)
+    {
+        <div>
+            @item.SrNo.
+        @Html.Raw(System.Web.HttpUtility.HtmlDecode(item.Question))
+    </div>
+
+        for (int i = 0; i < item.Options.Count; i++)
+        {
+
+            if (item.Options[i].SrNo == item.Answer)
+            {
+
+                if (item.Answer == item.CurrectAnswer)
+                {
+                    <div class="col-12 col-12-small alert-success">
+                        <input type="radio" id="@item.Options[i].Oid" name="@item.Qid" checked="checked" disabled>
+                        <label for="@item.Options[i].Oid">@item.Options[i].Answer</label>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 col-12-small alert-danger">
+                        <input type="radio" id="@item.Options[i].Oid" name="@item.Qid" checked="checked" disabled>
+                        <label for="@item.Options[i].Oid">@item.Options[i].Answer</label>
+                    </div>
+                }
+
+
+
+            }
+            else
+            {
+                if (item.Options[i].SrNo == item.CurrectAnswer)
+                {
+                    <div class="col-12 col-12-small alert-success">
+                        <input type="radio" id="@item.Options[i].Oid" name="@item.Qid" disabled>
+                        <label for="@item.Options[i].Oid">@item.Options[i].Answer</label>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 col-12-small">
+                        <input type="radio" id="@item.Options[i].Oid" name="@item.Qid" disabled>
+                        <label for="@item.Options[i].Oid">@item.Options[i].Answer</label>
+                    </div>
+                }
+            }
+        }
+
+
+        <p>
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#col_@item.Qid" aria-expanded="false" aria-controls="col_@item.Qid">View Answer</button>
+        </p>
+        <div class="collapse" id="col_@item.Qid">
+            <div class="card card-body">
+                <p>Currect Answer : <b>@item.CurrectAnswer </b></p>
+                @item.AnswerDetails
+            </div>
+        </div>
+    }
+
+</div>
+
+<a class="hide-on-mobile" href="javascript:printPage('printableArea');"><i class="fa fa-print"></i> Print Page</a>
+<script>function printPage(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+
+    //window.print();
+}</script>

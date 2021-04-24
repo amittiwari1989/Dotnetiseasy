@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="~/Image/Icon.ico" type="image/x-icon" sizes="16x16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Learn to develop basic site and basic software, share and download sample projects" />
+    <meta name="description" content="@ViewBag.meta" />
+    <meta name="keywords" content="@ViewBag.meta">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    @*<link rel="stylesheet" href="~/Content/css/main.css" />*@
+
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="~/Home" class="logo"><img src="~/Image/LogoP.png" style="position: absolute;margin-top: -50px;height:85px" /> </a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    @RenderBody()
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+
+                    @using (Html.BeginForm("Index", "Artical", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="text" name="Artials" id="Artials" placeholder="Search" />
+                    }
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="~/">Home</a></li>
+                        <li><a href="~/DotNet">ASP.NET</a></li>
+                        <li><a href="~/SQL">SQL</a></li>
+                        <li><a href="~/HTML">HTML</a></li>
+                        <li><a href="~/Artical/PostArtical">Post Artical</a></li>
+
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Contact Details.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="mailto:info@dotnetiseasy.com">info@dotnetiseasy.com</a></li>
+                        @*<li class="icon solid fa-phone">(000) 000-0000</li>*@
+                        <li class="icon solid fa-home">
+                            Mumbai<br />
+                            40012008
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">copyright &copy; 2020</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    @*<script src="~/Scripts/js/jquery.min.js"></script>
+    <script src="~/Scripts/js/browser.min.js"></script>
+    <script src="~/Scripts/js/breakpoints.min.js"></script>
+    <script src="~/Scripts/js/main.js"></script>*@
+
+
+</body>
+</html>

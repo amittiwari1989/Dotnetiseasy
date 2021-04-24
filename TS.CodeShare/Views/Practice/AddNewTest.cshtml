@@ -1,0 +1,44 @@
+﻿@using TS.ManageContents
+@model QuestionGroup
+@{
+    ViewBag.Title = "AddNewTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Test</h2>
+
+@using (Html.BeginForm("AddNewTest", "Practice", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.QuestionGroupName, new { @class = "col-md-6 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.QuestionGroupName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TimePerQuestion, new { @class = "col-md-6 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.TimePerQuestion, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.QLanguage, new { @class = "col-md-6 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownList("QLanguage", new List<SelectListItem>
+{
+   new SelectListItem{ Text="C#", Value = "Csharp" }
+}, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Save and Add Question" />
+        </div>
+    </div>
+}

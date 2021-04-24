@@ -1,0 +1,92 @@
+﻿@using TS.Enums
+@model TS.WebApp.Models.TicketVewModel
+
+@{
+    ViewBag.Title = "CreateTicket";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>CreateTicket</h2>
+
+
+
+@using (Html.BeginForm("CreateTicket", "Ticket", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    //@Html.AntiForgeryToken()
+    <h4>Create New Ticket</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ticket_type, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.ticket_type, Model.Type, new { @class = "form-control" })
+
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.StatusName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.StatusName, Model.Status, "Select", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.priority_type, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+
+            @Html.DropDownList("priority_type", ViewBag.EnumList as SelectList,new { @class = "form-control" })
+            @*@Html.DropDownList("priority_type",
+                new SelectList(Enum.GetNames(typeof(TicketPriority)), Enum.GetValues(typeof(TicketPriority))),
+                "Select",
+                new { @class = "form-control" })*@
+        </div>
+    </div>
+
+    for (int i = 0; i < Model.CustomField.Count; i++)
+    {
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="@Model.CustomField[i].FieldName">@Model.CustomField[i].Label</label>
+            <div class="col-md-10">
+                @if(@Model.CustomField[i].DataType==1){
+                <input class="form-control" data-val="true" data-val-required="The Subject field is required." id="@Model.CustomField[i].FieldName" name="@Model.CustomField[i].FieldName" type="text">
+                }
+                else
+                {
+                    <select class="form-control" data-val="true" data-val-required="The Subject field is required." id="@Model.CustomField[i].FieldName" name="@Model.CustomField[i].FieldName" >
+                        @for (int j = 0; j < Model.CustomField[i].customFieldList.Count; j++)
+                        {
+                            <option value="@Model.CustomField[i].customFieldList[j].DataField">@Model.CustomField[i].customFieldList[j].TextField</option>
+                        }
+                    </select>
+                }
+            </div>
+        </div>
+
+    }
+
+
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Create Ticket" />
+        </div>
+    </div>
+
+}

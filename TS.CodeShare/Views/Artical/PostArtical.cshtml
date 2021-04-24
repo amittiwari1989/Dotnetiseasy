@@ -1,0 +1,83 @@
+﻿@using TS.CodeShare.Models
+@model PostArticalModel
+
+
+@{
+    ViewBag.Title = "Post New Artical";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="../trumbowyg/dist/ui/trumbowyg.min.css">
+
+<!-- Import jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+
+<!-- Import Trumbowyg -->
+<script src="../trumbowyg/dist/trumbowyg.min.js"></script>
+<script src="../trumbowyg/dist/plugins/upload/trumbowyg.pasteimage.min.js"></script>
+
+<style>
+    input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+        box-shadow: inset 0 0 0 0px #f56a6a;
+    }
+
+    input[name="btnPostArtical"] {
+        box-shadow: inset 0 0 0 0px Black;
+    }
+</style>
+<h2>Post Artical</h2>
+@using (Html.BeginForm("PostArtical", "Artical", FormMethod.Post, new { @class = "form-horizontal", role = "form", Validation = "false" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Language)
+        @Html.DropDownList("Language", new List<SelectListItem>
+{
+   new SelectListItem{ Text="DotNet", Value = "DotNet" },
+   new SelectListItem{ Text="HTML", Value = "HTML" },
+   new SelectListItem{ Text="SQL", Value = "SQL" } }, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Subject)
+        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.topic_details)
+
+        @Html.TextBoxFor(m => m.topic_details, new { @class = "form-control" })
+
+    </div>
+    if (Convert.ToString(Session["uid"]) == "1")
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.FileName)
+            @Html.TextBoxFor(m => m.FileName, new { @class = "form-control" })
+        </div>
+    }
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Content)
+        @Html.TextArea("Content", new { @class = "form-control", placeholder = "Plase your HTML Content Here" })
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary"  value="Submit Post" />
+        </div>
+    </div>
+}
+
+<script>
+    //$('#editor').trumbowyg({
+    //    btns: [
+    //        ['strong', 'em'],
+    //        ['justifyLeft', 'justifyCenter'],
+    //        ['insertImage', 'link']
+    //    ]
+    //});
+    $('#Content').trumbowyg();
+    //$('#Content').trumbowyg('html');
+</script>

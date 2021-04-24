@@ -1,0 +1,85 @@
+﻿@model  List<TS.WebApp.Models.TicketVewModel>
+@{
+    ViewBag.Title = "View Ticket";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>View Ticket</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var fieldList ; //= new Array();
+    $(document).ready(function() {  
+        $(function () {
+
+            $.ajax({
+                type: "POST",
+                url: "/Ticket/GetFields",
+                //data: JSON.stringify(Search),
+                //data: JSON.stringify(TicketVewModel),
+                //data:TicketVewModel,
+                dataType: "json",
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    var d = data.replace("\\","");
+                    fieldList = JSON.parse(d);
+                    //alert(data[0].Subject);
+                    //for (var i = 0; i < data.length; i++) {
+                     //   fieldList.push( new Array(data[i][0] = data[i][1]));
+                    //}
+                    
+                },
+                error: function () {
+                    alert("Error occured!!")
+                }
+            });
+
+
+            $('#btnSubmit').click(function(event) {  
+                event.preventDefault();  
+                var TicketVewModel = {
+                    StatusName: $('#status').val()
+                };
+                //var TicketVewModel = "StatusName= '" + $('#status').val() + "'";
+                $.ajax({  
+                    type: "POST",  
+                    url: "/Ticket/ViewTicket",
+                    //data: JSON.stringify(Search),
+                    data: JSON.stringify(TicketVewModel),
+                    //data:TicketVewModel,
+                    dataType: "json" ,
+                    contentType: 'application/json; charset=utf-8',  
+                success: function(data) {  
+                    //alert(data[0].Subject);
+                    var fieldList1 = [{ "name": "Subject" }, { "name": "Status" }];
+                    generateTable(displaydata, data, fieldList, true, false);
+                },  
+                error: function() {  
+                    alert("Error occured!!")  
+                }  
+            });  
+        });  
+    });  
+    });  
+</script> 
+
+<input type="submit" value="Search" class="btn btn-default" id="btnSubmit" />
+
+<select id="status">
+    <option>Open</option>
+    <option>Pending</option>
+</select>
+<div id="displaydata">
+
+</div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Employee Id </th>
+    </tr>
+   @foreach (var item in Model)
+   {
+           <tr>
+            <td>@item.Subject</td>
+            <td>@item.StatusName</td>
+        </tr>
+    }
+</table>  

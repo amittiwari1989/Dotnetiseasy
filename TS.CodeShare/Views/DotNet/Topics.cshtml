@@ -1,0 +1,14 @@
+﻿@model TS.ManageContents.code_topics
+@{
+    ViewBag.meta = @Model.search_tags;
+    ViewBag.Title = @Model.topic_subject;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Topics</h2>
+
+@Model.topic_subject
+<pre class="line-numbers" data-start="1">
+<code class="language-xml">
+@Model.ArticalBody
+    </code>
+</pre>

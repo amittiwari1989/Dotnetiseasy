@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .Content p {
+        color: #7f888f;
+    }
+</style>
+<div class="Content">
+
+    @foreach (var item in Model)
+    {
+        <a href="@(string.IsNullOrEmpty(item.URL) ? "Artical/" + item.Language + "/" + item.topic_id.ToString() : item.Language + "/" + item.URL)">
+            <h2 id="@item.topic_id.ToString()">@item.topic_subject</h2>
+            <p>@item.code_topicscol</p>
+
+        </a>
+        <hr class="major" />
+
+    }
+    @*@{Response.WriteFile(Server.MapPath("/Views/HTML/formt.html"));}*@
+    @*@{ Html.RenderPartial(Server.MapPath("/Views/HTML/formt.cshtml")); }*@
+    @{this.GetOutputWriter().Write(File.ReadAllText(Server.MapPath("/Views/HTML/formt.html")));}
+</div>

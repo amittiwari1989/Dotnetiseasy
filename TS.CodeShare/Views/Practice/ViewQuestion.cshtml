@@ -1,0 +1,100 @@
+﻿@using TS.ManageContents
+@model QuestionMaster
+
+@{
+    ViewBag.Title = @ViewBag.QuestionGroupName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #div_ques p {
+    display: contents;
+    } 
+
+</style>
+<span id="demo" style="margin: 0;float: right;"></span>
+<div>
+    <h3>@ViewBag.QuestionGroupName ( @Model.TotalQuestion)</h3>
+
+</div>
+<div id="div_ques">@Model.SrNo.
+@Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Question))</div>
+@using (Html.BeginForm("ViewQuestion", "Practice", new { QGid = Model.QuestionGroup }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+
+    @Html.Hidden("QuestionGroup", Model.QuestionGroup.ToString())
+    @Html.Hidden("SrNo", Model.SrNo.ToString())
+    @Html.Hidden("EndTime", Session["EndTime"])
+    @Html.Hidden("TimeLeft", Session["TimeLeft"])
+
+
+    //foreach (QuestionOptions op in Model.Options)
+    for (int i = 0; i < Model.Options.Count; i++)
+    {
+
+
+        <div class="col-12 col-12-small">
+
+
+            @Html.RadioButton("Answer", Model.Options[i].SrNo, new { @id = Model.Options[i].Oid })
+
+            @Html.LabelFor(m => m.Answer, Model.Options[i].Answer, new { @for = Model.Options[i].Oid })
+
+            @*@Html.RadioButtonFor(m=>m.Options[i].Answer, Model.Options[i].Answer, new { id = Model.Options[i].Oid})*@
+            @*<input type="radio" id="@op.SrNo" name="Answer">
+                <label for="@op.SrNo">@op.Answer</label>*@
+        </div>
+    }
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @if (ViewBag.Last == false)
+            {
+                <input type="submit" class="btn btn-outline-info" value="Next" />
+            }
+            else
+            {<input type="submit" class="btn btn-outline-info" value="Submit" /> }
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+
+
+
+<script>
+    // Set the date we're counting down to
+
+    var countDownDate = new Date();
+    var TimeLeft = document.getElementById("TimeLeft").value;
+    countDownDate.setSeconds(countDownDate.getSeconds() + parseInt(TimeLeft));
+    ///var countDownDate = new Date(document.getElementById("EndTime").value); // new Date("May 3, 2020 01:30:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        
+        var now = new Date().getTime();
+        
+        //now.setSeconds(now.getSeconds() - TimeLeft);
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = (days > 0 ? days + "d " : "") + (hours > 0 ? hours + "h " : "")
+        + (minutes > 0 ? minutes + "m " : "") + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "Time Up!";
+            window.location.href = "ViewResult";
+        }
+    }, 1000);
+</script>

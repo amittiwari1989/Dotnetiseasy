@@ -1,0 +1,39 @@
+﻿@using System.Data
+@model DataSet
+@{
+    ViewBag.Title = "MyQuestionSet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MyQuestionSet</h2>
+
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Group Name</th>
+            <th scope="col">Language</th>
+            <th scope="col">Total Question</th>
+            <th scope="col">Created Date</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int SrNO = 1;
+        }
+        @foreach (DataRow DR in Model.Tables[0].Rows)
+        {
+            <tr>
+                <td>@SrNO</td>
+                <td>@DR["QuestionGroupName"]</td>
+                <td>@DR["QLanguage"]</td>
+                <td>@DR["TotalQuestion"]</td>
+                <td>@DR["CreatedDate"]</td>
+                <td><a class="btn btn-sm" href="AddMcqQuestions?QgrupId=@DR["QGid"]">Add More Question</a></td>
+            </tr>
+            SrNO += 1;
+        }
+
+    </tbody>
+</table>

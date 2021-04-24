@@ -1,0 +1,36 @@
+﻿@using TS.CodeShare.Models
+@model QuestionTestModel
+
+@{
+    ViewBag.Title = "ViewQuestion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("ViewQuestion", "Practice", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+
+<h3>@Model.Name</h3>
+<br />
+
+foreach (var a in Model.Questions)
+{
+@a.Question
+
+    foreach (var op in a.Options)
+    {
+    <div class="col-4 col-12-small">
+        @Html.RadioButtonFor(m=>m.Answer, op.SrNo)
+            @Html.Label(op.Oid.ToString())
+        @*<input type="radio" id="@op.Oid" name="@op.Qid">
+    <label for="@op.Oid">@op.Answer</label>*@
+    </div>
+    }
+<br />
+}
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+}

@@ -1,0 +1,158 @@
+﻿@using TS.CodeShare.Models
+@model AddQuestionModel
+@{
+    ViewBag.Title = "AddMcqQuestions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="../trumbowyg/dist/ui/trumbowyg.min.css">
+
+<!-- Import jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+
+<!-- Import Trumbowyg -->
+<script src="../trumbowyg/dist/trumbowyg.min.js"></script>
+<script src="../trumbowyg/dist/plugins/upload/trumbowyg.pasteimage.min.js"></script>
+
+
+<style>
+    .trumbowyg-box, .trumbowyg-editor {
+        min-height: 100px;
+    }
+
+    .trumbowyg-editor, .trumbowyg-textarea {
+        min-height: 100px;
+    }
+</style>
+
+
+<h3>Add Questions</h3>
+
+@using (Html.BeginForm("AddMcqQuestions", "Practice", new { QgrupId = Request.QueryString["QgrupId"] }, FormMethod.Post,new { role = "form", Validation = "false" }))
+{
+    @Html.AntiForgeryToken()
+    <b>Group : - </b>   @Model.Qgrup
+
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    @Html.Hidden("QgrupId", Request.QueryString["QgrupId"])
+    <div class="form-group">
+        @Html.LabelFor(m => m.Question)
+        @Html.TextBoxFor(m => m.Question, new { @class = "form-control" })
+        @*@Html.TextAreaFor(m => m.Question, new { @class = "form-control" })*@
+    </div>
+    <div id="TextBoxContainer">
+        @if (Model.DynamicTextBox != null)
+        {
+            int srno = 65;
+            foreach (var item in Model.DynamicTextBox)
+            {
+                char character = (char)srno;
+                string text = character.ToString();
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text" id="@srno"> @text. </span></div>
+                    <input type="text" name="DynamicTextBox" class="form-control" autocomplete="off" value="@item">
+                </div>
+                srno = srno + 1;
+            }
+
+        }
+        <!--Textboxes will be added here -->
+    </div>
+    <input id="btnAdd" type="button" class="btn btn-outline-info btn-sm" value="Add Options" onclick="AddTextBox()" />
+    <input id="btnRemove" type="button" class="btn btn-outline-info btn-sm" style="display:none" value="Remove Options" onclick="RemoveLastTextBox()" />
+    <div class="form-group">
+        @Html.LabelFor(m => m.CurrectAnswer)
+        @Html.DropDownListFor(m => m.CurrectAnswer, new List<SelectListItem> { }, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AnswerDescription)
+        @Html.TextBoxFor(m => m.AnswerDescription, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @*<input type="submit" value="Submit" />*@
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </div>
+}
+<script type="text/javascript">
+
+   // $('#Question').trumbowyg();
+
+    function GetDynamicTextBox(value) {
+        var div = $("<div />").attr("class", "input-group mb-3");
+
+        var textBox = $("<input />").attr("type", "textbox").attr("name", "DynamicTextBox").attr("class", "form-control").attr("autocomplete", "off");
+        textBox.val(value);
+        var alldiv = $("#TextBoxContainer div input");
+        div.append(" <div class='input-group-prepend'><span class='input-group-text' id='" + String.fromCharCode(65 + alldiv.length) + "'>" + String.fromCharCode(65 + alldiv.length) + ". </span></div>");
+        div.append(textBox);
+
+        var sel = document.getElementById('CurrectAnswer');
+
+        // create new option element
+        var opt = document.createElement('option');
+
+        opt.appendChild(document.createTextNode(String.fromCharCode(65 + alldiv.length)));
+
+
+        opt.value = String.fromCharCode(65 + alldiv.length);
+
+        sel.appendChild(opt);
+        //var button = $("<input />").attr("type", "button").attr("value", "Remove");
+        //button.attr("onclick", "RemoveTextBox(this)");
+        //div.append(button);
+
+        $("#btnRemove").css("display", "");
+
+        return div;
+    }
+    function AddTextBox() {
+        var div = GetDynamicTextBox("");
+        $("#TextBoxContainer").append(div);
+    }
+
+    function RemoveTextBox(button) {
+        $(button).parent().remove();
+    }
+
+    function RemoveLastTextBox() {
+        var alldiv = $("#TextBoxContainer div input");
+
+        $("#TextBoxContainer div input").last().parent().remove();
+
+
+        var sel = document.getElementById('CurrectAnswer');
+        sel.removeChild(sel.options[alldiv.length - 1]);
+
+        if (alldiv.length == 1)
+            $("#btnRemove").css("display", "none");
+
+    }
+
+    $(function () {
+        var alldiv = $("#TextBoxContainer div input");
+        var sel = document.getElementById('CurrectAnswer');
+        //sel.appendChild(opt);
+        for (var i = 0; i < alldiv.length; i++) {
+            var opt = document.createElement('option');
+            opt.appendChild(document.createTextNode(String.fromCharCode(65 + i)));
+            opt.value = String.fromCharCode(65 + 1);
+            sel.appendChild(opt);
+        }
+
+        @*    if (Model.DynamicTextBox != null)
+        {
+            var values = eval(@Model.DynamicTextBox);
+            if (values != null) {
+                $("#TextBoxContainer").html("");
+                $(values).each(function () {
+                    $("#TextBoxContainer").append(GetDynamicTextBox(this));
+                });
+            }
+        }*@
+    });
+</script>

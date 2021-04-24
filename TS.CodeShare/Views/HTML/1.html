@@ -1,0 +1,7 @@
+
+<pre class="line-numbers" data-start="1"><code class="language-csharp">
+<p>1) ORACLE<br><br>&nbsp;&nbsp;&nbsp; &lt;add name="OracleConnectionString" connectionString="Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=27.0.0.1)(PORT=1521)))(CONNECT_DATA=(SERVER=27.0.0.1)(SID=ORCLSID)));User Id=scott;Password=tiger;" providerName="Oracle.DataAccess.Client"/&gt;<br>&nbsp;&nbsp;&nbsp; &lt;add name="OracleConnectionString" connectionString="Data Source=27.0.0.1:1521/orcl;User ID=sccott;Password=tiger;" providerName="Oracle.DataAccess.Client"/&gt;<br><br>2) MSSQL<br><br>&nbsp;&nbsp;&nbsp; &lt;add name="MSSQLConnectionString" connectionString="Data Source=27.0.0.1;Initial Catalog=Northwind; User ID=sa;Password=MYPassword; Connect Timeout=0;" providerName="System.Data.SqlClient" /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;add name="MSSQLConnectionString" connectionString="Server=270.0.01;Database=Northwind; uid=sa;pwd=MYPassword;" providerName="System.Data.SqlClient" /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;add name="MSSQLConnectionString" connectionString="Data Source=MY-PC\SQLI; Initial Catalog=Northwind;Integrated Security=true" /&gt;<br><br>3) MYSQL<br>&nbsp;&nbsp;&nbsp; &lt;add name="CBSConnectionString" connectionString="Server=27.0.0.1;port=3306;Database=dbname; Uid=root;Pwd=MYPassword;" providerName="MySql.Data.MySqlClient"/&gt;<br></p>
+
+        </code>
+</pre>
+    

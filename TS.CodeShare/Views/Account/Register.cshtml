@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+<script src="static/hello.all.js"></script>
+<script>
+    var YOUR_CLIENT_ID = '1025588121266-9idsjrokgmibit6pf9ci1ojmj729i8kf.apps.googleusercontent.com';
+    //var YOUR_REDIRECT_URI = 'http://www.dotnetiseasy.com/Account/Register';
+    var YOUR_REDIRECT_URI = 'http://localhost:58516/Account/Register';
+    var fragmentString = location.hash.substring(1);
+    var accessToken = "";
+    @*hello.init({
+        google: YOUR_CLIENT_ID    // not real id
+    });
+    hello.on('auth.login', function (auth) {
+
+        // add a greeting and access the thumbnail and name from
+        // the authorized response
+
+        hello(auth.network).api('/me').then(function (resp) {
+            var lab = document.createElement("div");
+            lab.id = "pic_and_greet";
+            lab.innerHTML = '<img src="' + resp.thumbnail + '" /> Hey ' + resp.name;
+            document.body.appendChild(lab);
+        });
+    });
+
+    // remove the greeting when we log out
+
+    hello.on('auth.logout', function () {
+        var lab = document.getElementById("pic_and_greet");
+        if (lab != null) document.body.removeChild(lab);
+    });
+</script>*@
+
+  // Parse query string to see if page request is coming from OAuth 2.0 server.
+  var params = {};
+  var regex = /([^&=]+)=([^&]*)/g, m;
+  while (m = regex.exec(fragmentString)) {
+    params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+  }
+  if (Object.keys(params).length > 0) {
+    localStorage.setItem('oauth2-test-params', JSON.stringify(params) );
+    if (params['state'] && params['state'] == 'try_sample_request') {
+      trySampleRequest();
+    }
+  }
+
+  // If there's an access token, try an API request.
+  // Otherwise, start OAuth 2.0 flow.
+  function trySampleRequest() {
+      var params = JSON.parse(localStorage.getItem('oauth2-test-params'));
+      accessToken = params['access_token'];
+      document.getElementById('txtToken').value = accessToken;
+    if (params && params['access_token']) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET',
+          'https://www.googleapis.com/auth/user.emails.read?fields=email&' +
+          'access_token=' + params['access_token']);
+      xhr.onreadystatechange = function (e) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.response);
+        } else if (xhr.readyState === 4 && xhr.status === 401) {
+          // Token invalid, so prompt for user permission.
+          oauth2SignIn();
+        }
+      };
+      xhr.send(null);
+    } else {
+      oauth2SignIn();
+    }
+  }
+
+  /*
+   * Create form to request access token from Google's OAuth 2.0 server.
+   */
+  function oauth2SignIn() {
+    // Google's OAuth 2.0 endpoint for requesting an access token
+    var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+
+    // Create element to open OAuth 2.0 endpoint in new window.
+    var form = document.createElement('form');
+    form.setAttribute('method', 'GET'); // Send as a GET request.
+    form.setAttribute('action', oauth2Endpoint);
+
+    // Parameters to pass to OAuth 2.0 endpoint.
+    var params = {'client_id': YOUR_CLIENT_ID,
+                  'redirect_uri': YOUR_REDIRECT_URI,
+        //'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
+                  scope: 'https://www.googleapis.com/auth/user.emails.read', //https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email
+                  'state': 'try_sample_request',
+                  'include_granted_scopes': 'true',
+                  'response_type': 'token'};
+
+    // Add form parameters as hidden input values.
+    for (var p in params) {
+      var input = document.createElement('input');
+      input.setAttribute('type', 'hidden');
+      input.setAttribute('name', p);
+      input.setAttribute('value', params[p]);
+      form.appendChild(input);
+    }
+
+    // Add form to page and submit it to open the OAuth 2.0 endpoint.
+    document.body.appendChild(form);
+    form.submit();
+  }
+
+  function revokeAccess() {
+      // Google's OAuth 2.0 endpoint for revoking access tokens.
+      var revokeTokenEndpoint = 'https://oauth2.googleapis.com/revoke';
+
+      // Create <form> element to use to POST data to the OAuth 2.0 endpoint.
+      var form = document.createElement('form');
+      form.setAttribute('method', 'post');
+      form.setAttribute('action', revokeTokenEndpoint);
+
+      // Add access token to the form so it is set as value of 'token' parameter.
+      // This corresponds to the sample curl request, where the URL is:
+      //      https://oauth2.googleapis.com/revoke?token={token}
+      var tokenField = document.createElement('input');
+      tokenField.setAttribute('type', 'hidden');
+      tokenField.setAttribute('name', 'token');
+      tokenField.setAttribute('value', accessToken);
+      form.appendChild(tokenField);
+
+      // Add form to page and submit it to actually revoke the token.
+      document.body.appendChild(form);
+      form.submit();
+  }
+</script>
+
+<button onclick="revokeAccess();">revokeAccess</button>
+<button onclick="trySampleRequest();">Try sample request</button>
+<input type="text" id="txtToken"/>
+
+
+
+
+<!-- Configuration -->
+<!-- You can create yours at: https://code.google.com/apis/console/-->
+<script>var clientId = YOUR_CLIENT_ID;
+    var apiKey = 'AIzaSyAC59e80l1i9UdThAUXMnOXTm8ITWYcW1E';
+    var scopes = 'https://www.googleapis.com/auth/user.emails.read https://www.googleapis.com/auth/userinfo.profile';
+    </script><!-- ENDS-->
+<!-- Required Functions--> <!--Add a button for the user to click to initiate auth sequence -->
+
+<img id="usrimg"/>
+<button id="authorize-button" style="visibility: ">Authorize</button>   
+<script type="text/javascript">
+          
+    // Use a button to handle authentication the first time.     
+    function handleClientLoad()
+    {       
+        gapi.client.setApiKey(apiKey);       
+        window.setTimeout(checkAuth,1);     
+    }
+    function checkAuth()
+    {       
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);     
+    }
+
+    function handleAuthResult(authResult) {
+        var authorizeButton = document.getElementById('authorize-button');
+        if (authResult && !authResult.error) { authorizeButton.style.visibility = 'hidden'; makeApiCall(); }
+        else
+        { authorizeButton.style.visibility = ''; authorizeButton.onclick = handleAuthClick; }
+    }
+      function handleAuthClick(event) {        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);        return false;      }
+// Load the API and make an API call.  Display the results on the screen.     
+function makeApiCall() {
+    gapi.client.load('plus', 'v1', function () {
+        var request = gapi.client.plus.people.get({ 'userId': 'me' }); request.execute(function (resp) {
+            var heading = document.createElement('h4');
+          //  var image = document.createElement('img');
+            usrimg.src = resp.image.url; heading.appendChild(image);
+            txtemail.value = resp.email;
+            heading.appendChild(document.createTextNode(resp.displayName));
+            document.getElementById('content').appendChild(heading);          });        });      }    </script>   
+<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>   
+ <div id="content"></div>   
+<p>Retrieves your profile name using the Google Plus API.</p>
+<!-- ENDS-->
+<input type="text" id="txtemail"/>

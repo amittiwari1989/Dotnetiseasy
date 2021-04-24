@@ -1,0 +1,204 @@
+﻿@using TS.ManageContents
+@model code_topics
+
+@{
+    ViewBag.Title = "Simple Login Asp DotNet Winform";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Simple Windows Form Login Application in C# </h2>
+<br />
+We will learn how to create a Simple Windows application, We will design Login form and display User name in new form using database in mssql.
+<br />
+<br />
+<b>1. From File menu select new project.</b>
+<br />
+<br />
+<img src="~/Image/DotNet/1.png" style="width:90%" />
+<br />
+<br />
+<b>1.Create a New Windows Form Application.</b>
+<br />
+<br />
+
+<img src="~/Image/DotNet/2.png" style="width:90%" />
+<br />
+<br />
+<b>2.Design new Login form.</b>
+<br />
+<br />
+<br />
+<img src="~/Image/DotNet/3.png" style="width:90%" />
+<br />
+<br />
+<pre class="line-numbers" data-start="1">
+<code class="language-dotnet">
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+namespace LoginDemoApplication
+{
+    public partial class frmLogin : Form
+    {
+        // database connection string
+        string connectionString = "Server=127.0.0.1;Database=DEMODB;uid=sa;pwd=password;";
+        public frmLogin()
+        {
+            InitializeComponent();
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            //validate your fields
+            if (string.IsNullOrEmpty(txtUserName.Text))
+            {
+                MessageBox.Show("User Name can not be empty");
+                txtUserName.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Password can not be empty");
+                txtPassword.Focus();
+                return;
+            }
+            //connection with database
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand("Select * from UserMaster where UserName=@@username", con);
+            cmd.Parameters.AddWithValue("@@username", txtUserName.Text);
+            con.Open();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            con.Close();
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Invalid User Name/Password");
+                return;
+            }
+            //check password
+            if (ds.Tables[0].Rows[0]["Password"].ToString() != txtPassword.Text)
+            {
+                MessageBox.Show("Invalid User Name/Password");
+                return;
+            }
+            frmMaster.DisplayName = ds.Tables[0].Rows[0]["DisplayName"].ToString();
+            frmMaster master = new frmMaster();
+            this.Hide();
+            master.Show();
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
+</code>
+</pre>
+<br />
+<br />
+<b>3.Design master page to view UserName after login.</b>
+<br />
+<br />
+<img src="~/Image/DotNet/4.png" style="width:90%" />
+<br />
+<br />
+<pre class="line-numbers" data-start="1">
+<code class="language-sharp">
+        using System;
+using System.Windows.Forms;
+namespace LoginDemoApplication
+{
+    public partial class frmMaster : Form
+    {
+        public static string DisplayName;
+        public frmMaster()
+        {
+            InitializeComponent();
+        }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Hide();
+        }
+        private void frmMaster_Load(object sender, EventArgs e)
+        {
+            lblUser.Text = DisplayName;
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void frmMaster_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
+
+    </code>
+</pre>
+<br />
+<br />
+<b>4.Create Table in mssql and insert Data.</b>
+<br />
+<br />
+<img src="~/Image/DotNet/5.png" style="width:90%" />
+<div style="align-content:center">
+<a class="button" href="~/SampleProjects/SimpleLoginAspDotNetWinform.zip">Download Source</a>
+</div>
+
+
+@if (Session["uid"] == null)
+{
+    @Html.ActionLink("Login for comment", "Login", "Account", new { returnUrl = Request.Url }, null)
+}
+else
+{
+    using (Html.BeginForm()) // "#", "", FormMethod.Post, new { id = "CommentForm", @class = "form-horizontal", role = "form" })
+    {
+        //@Html.AntiForgeryToken()
+
+        <input type="hidden" value="4" id="topic_id" name="topic_id"/>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Comment, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Comment, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Comment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="AddComment" name="AddComment" value="Post Comment" class="btn btn-default" />
+            </div>
+        </div>
+    }
+}
+
+<div id="div_comments">
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $.get("../../Artical/ViewComment?topic_id=4", function (data, status) {
+            var Comments = JSON.parse(data);
+            for (var i = 0; i < Comments.length; i++) {
+
+                let current_datetime = new Date(Comments[i].created_date);
+                let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds() ;
+                //console.log(formatted_date)
+
+                $("#div_comments").append("<label class='col-md-2 control-label'>" + "<img src='/Image/User_Avatar.png' style='width: 13px;margin-right:4px'/>" + Comments[i].display_name + "</label><blockquote>"+ Comments[i].Comments +"</blockquote><p style='margin-top: -50px;text-align: right;font-size: 12px;'>"+formatted_date+"</p>");
+            }
+
+        });
+
+    });
+</script>

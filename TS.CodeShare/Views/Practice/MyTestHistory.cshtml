@@ -1,0 +1,51 @@
+﻿@using System.Data
+@model DataSet
+@{
+    ViewBag.Title = "MyTestHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>My Test History</h2>
+<table class="table table-sm table-hover">
+    <thead >
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Group Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time Taken</th>
+            <th scope="col">TotalQuestion</th>
+            <th scope="col">Currect</th>
+            <th scope="col">Percentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            int SrNO = 1;
+        }
+        @foreach (DataRow DR in Model.Tables[0].Rows)
+        {
+            <tr data-url="ViewResult?TestId=@DR["Tlid"]">
+                <td onclick="Goto(ViewResult?TestId=@DR["Tlid"])">@SrNO</td>
+                <td>@DR["QuestionGroupName"]</td>
+                <td>@DR["TestDate"]</td>
+                <td>@DR["TimeTaken"]</td>
+                <td>@DR["TotalQuestion"]</td>
+                <td>@DR["Currect"]</td>
+                <td>@DR["Percentage"]</td>
+            </tr>
+            SrNO += 1;
+        }
+
+    </tbody>
+</table>
+
+<script>
+    function Goto(url)
+    {
+        window.location.href = url;
+    }
+    $(function () {
+        $('table.table tr').click(function () {
+            window.location.href = $(this).data('url');
+        });
+    })
+</script>

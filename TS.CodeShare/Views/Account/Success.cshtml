@@ -1,0 +1,11 @@
+﻿@using TS.CodeShare.Models
+@model AlertModel
+@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+<div class="success">
+    @Model.Message
+</div>
